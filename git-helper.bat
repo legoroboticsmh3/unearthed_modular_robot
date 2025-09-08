@@ -18,14 +18,14 @@ goto menu
 
 :commit
 echo.
-set /p name="Enter your name: "
-set /p msg="Enter a short message: "
-
-echo.
 echo Checking for changes...
 echo ==============================
 git status --short
 echo ==============================
+
+echo.
+set /p name="Enter your name: "
+set /p msg="Enter a short message: "
 
 echo.
 echo Now select which files to include in the commit:
