@@ -20,3 +20,8 @@ R_attach.run_angle(500,90)
 Drive.straight(-200)
 Drive.turn(45)
 Drive.straight(-670)
+
+Drive.straight(180)
+Drive.turn(90)
+Drive.straight(500)
+Drive.straight(-500)
