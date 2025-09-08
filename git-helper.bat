@@ -13,7 +13,7 @@ set /p choice="Choose an option: "
 
 if "%choice%"=="1" goto commit
 if "%choice%"=="2" goto log
-if "%choice%"=="3" exit
+if "%choice%"=="3" exit /b
 goto menu
 
 :commit
@@ -25,7 +25,7 @@ echo ==============================
 
 echo.
 set /p name="Enter your name: "
-set /p msg="Enter a short message: "
+set /p msg="Enter a short message about the change done: "
 
 echo.
 echo Now select which files to include in the commit:
