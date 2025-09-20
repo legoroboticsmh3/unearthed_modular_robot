@@ -38,7 +38,7 @@ def PortDebug():
         # pybricks.pupdevices.ColorLightMatrix
         64: "SPIKE 3x3 Color Light Matrix",
     }
-
+    print("XXXX: in PortDebug")
     # Make a list of known ports.
     ports = [Port.A, Port.B]
 
@@ -81,4 +81,5 @@ def PortDebug():
 
 # If script is run directly, execute fuction
 if __name__ == '__main__':
+    print("XXXX: in PortDebug main")
     PortDebug()
