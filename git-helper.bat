@@ -1,19 +1,21 @@
 @echo off
-:: Simple Git Helper Script for Kids with File Selection
+:: Simple Git Helper Script for Kids with File Selection, Git Pull, and Git Log
 
 :menu
 echo ==============================
 echo   Git Helper Script
 echo ==============================
 echo 1) Commit changes
-echo 2) Show last 25 commits (one line)
-echo 3) Exit
+echo 2) Pull latest changes from remote
+echo 3) Show last 25 commits (one line)
+echo 4) Exit
 echo ==============================
 set /p choice="Choose an option: "
 
 if "%choice%"=="1" goto commit
-if "%choice%"=="2" goto log
-if "%choice%"=="3" exit /b
+if "%choice%"=="2" goto pull
+if "%choice%"=="3" goto log
+if "%choice%"=="4" exit /b
 goto menu
 
 :commit
@@ -23,16 +25,24 @@ echo ==============================
 git status --short
 echo ==============================
 
+:: Check if there are any changes
+for /f %%i in ('git status --porcelain') do (
+    set changes=1
+)
+if not defined changes (
+    echo No changes to commit.
+    goto menu
+)
+
 echo.
 set /p name="Enter your name: "
-set /p msg="Enter a short message about the change done: "
+set /p msg="Enter a short message: "
 
 echo.
 echo Now select which files to include in the commit:
 
 :: Loop over all changed/untracked files
 for /f "tokens=1,* delims= " %%a in ('git status --short') do (
-    set status=%%a
     set file=%%b
     call :askFile "%%b"
 )
@@ -68,6 +78,21 @@ echo.
 echo Commit complete!
 goto menu
 
+:pull
+echo.
+echo Pulling latest changes from remote...
+git pull
+echo.
+echo Pull complete!
+goto menu
+
+:log
+echo.
+echo Showing last 25 commits (one line):
+git log -25 --oneline
+echo.
+goto menu
+
 :askFile
 setlocal
 set fname=%~1
@@ -81,9 +106,3 @@ if /i "%include%"=="Y" (
 endlocal
 goto :eof
 
-:log
-echo.
-echo Showing last 25 commits (one line):
-git log -25 --oneline
-echo.
-goto menu
