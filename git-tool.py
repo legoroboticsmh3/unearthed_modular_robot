@@ -60,6 +60,7 @@ def commit_changes():
 
 def git_pull():
     print("\nPulling latest changes from remote...")
+    subprocess.run(["git", "rebase"])
     subprocess.run(["git", "pull"])
     print("Pull complete!")
     input("Press Enter to continue...")
