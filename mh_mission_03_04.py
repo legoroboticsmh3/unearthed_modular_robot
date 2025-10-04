@@ -5,10 +5,38 @@ from pybricks.robotics import DriveBase
 from pybricks.tools import wait, StopWatch
 
 
+#Gear ratio for attachment: 7:9 (ADD TO CODE)
+
 hub = PrimeHub()
 R_motor=Motor(Port.E,Direction.COUNTERCLOCKWISE, gears=[28,20])
 L_motor=Motor(Port.F,Direction.CLOCKWISE, gears=[28,20])
-Left_attach=Motor(Port.A)
-Right_attach=Motor(Port.B)
+Left_attach=Motor(Port.A, gears=[28, 36])
+Right_attach=Motor(Port.B, gears=[28, 36])
 Drive=DriveBase(L_motor, R_motor, 62.4, 110)
+
+Drive.use_gyro(True)
+
+Left_attach.run_angle(200, -15)
+Drive.straight(-980)
+Drive.turn(-91)
+Right_attach.run_angle(150,130)
+Left_attach.run_angle(240,112.6)
+Drive.settings(straight_speed=50)
+Drive.straight(122)
+Left_attach.run_angle(200,-12)
+wait(500)
+Right_attach.run_angle(100,-130)
+Drive.straight(-145)
+Drive.settings(straight_speed=500)
+Drive.turn(90)
+wait(500)
+Drive.turn(-48)
+Left_attach.run_angle(500, 100)
+Drive.settings(straight_speed=100)
+Drive.straight(378.7)
+wait(100)
+Drive.settings(straight_speed=1000)
+Left_attach.dc(-9000)
+wait(600) 
+Left_attach.run_angle(500,300)
 
