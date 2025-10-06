@@ -14,40 +14,24 @@ Drive.use_gyro(True)
 Drive.settings(turn_rate=160)
 # Attach_Right=Motor(Port.D)
 # Attach_Left=Motor(Port.C)
-Drive.straight(680)  
+#Drive.straight(680)  #this is the distance for the original wihout the mission 9 back attachment
+Drive.straight(196)  
+Drive.turn(90)
+
+Drive.straight(530)
 Drive.turn(49)
-Drive.straight(35)
+Drive.straight(38)
 Drive.settings(turn_rate=75)   #to get the boulders down 
 Drive.turn(-39)        #to get the boulders down Mission number 6
 Drive.settings(turn_rate=160)
-Drive.straight(50)
+Drive.straight(55)
 Drive.turn(-98)     #mission number 5
-Drive.straight(-260)   #push the boulders back
+Drive.straight(-260) 
+Drive.straight(180)  #push the boulders back
 # Drive.straight(590)
 Drive.straight(200)
-Drive.turn(8)
-Drive.straight(410)
+Drive.turn(15)
+Drive.straight(420)
 Drive.turn(35)
 Drive.settings(straight_speed=800)
-Drive.straight(-250)
-wait(1000)
-Drive.straight(200)
-
-
-
-#Drive.settings(straight_speed=200)
-
-#Drive.straight(-220)
-#Drive.turn(10)
-#Drive.straight(-20)
-#wait(2000)
-#Drive.stop()
-
-#Drive.turn(-15)
-#Drive.straight(100, then=Stop.Hold)
-#Drive.straight(-10)
-#wait(1000)
-#Drive.straight(50)
-#Drive.turn(15)
-
-
+Drive.straight(-300)
