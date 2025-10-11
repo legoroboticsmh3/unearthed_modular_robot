@@ -1,43 +1,39 @@
-from pybricks.hubs import PrimeHub
-from pybricks.pupdevices import Motor, ColorSensor, UltrasonicSensor, ForceSensor
-from pybricks.parameters import Button, Color, Direction, Port, Side, Stop
-from pybricks.robotics import DriveBase
-from pybricks.tools import wait, StopWatch
+from pybricks.tools import wait
+from pybricks.parameters import Button, Color
+from urandom import randint
+from umath import pi, sqrt
 
-hub = PrimeHub()
 
-R_Motor = Motor(Port.E,positive_direction=Direction.COUNTERCLOCKWISE, gears=[28, 20])
-L_Motor = Motor(Port.F,positive_direction=Direction.CLOCKWISE, gears=[28, 20])
-Drive= DriveBase(L_Motor,R_Motor,62.4,110)
-Drive.use_gyro(True)
+async def run_2(robot):
+    print("Starting Run: " + __name__)
 
-Drive.settings(turn_rate=160)
-# Attach_Right=Motor(Port.D)
-# Attach_Left=Motor(Port.C)
-#Drive.straight(680)  #this is the distance for the original wihout the mission 9 back attachment
-Drive.straight(196)  
-Drive.turn(90)
+    robot.Drive.settings(turn_rate=160)
+    # Attach_Right=Motor(Port.D)
+    # Attach_Left=Motor(Port.C)
+    #Drive.straight(680)  #this is the distance for the original wihout the mission 9 back attachment
+    await robot.Drive.straight(196)  
+    await robot.Drive.turn(90)
 
-Drive.straight(500)
-Drive.turn(49)
-Drive.straight(49)
-Drive.settings(turn_rate=75)   #to get the boulders down 
-Drive.turn(-39)        #to get the boulders down Mission number 6
-Drive.settings(turn_rate=160)
-Drive.straight(55)
-Drive.turn(-98)     #mission number 5
-Drive.straight(-260) 
-Drive.straight(180)  #push the boulders back
-# Drive.straight(590)
-Drive.straight(200)
-Drive.turn(12)
-Drive.straight(510)
-Drive.turn(41)
-Drive.settings(straight_speed=800)
-Drive.straight(-360)
-Drive.straight(220)
-Drive.turn(-60)
-Drive.straight(900)
-Drive.turn(-90)
-Drive.straight(640)
-#1000, 640
+    await robot.Drive.straight(500)
+    await robot.Drive.turn(49)
+    await robot.Drive.straight(49)
+    robot.Drive.settings(turn_rate=75)   #to get the boulders down 
+    await robot.Drive.turn(-39)        #to get the boulders down Mission number 6
+    robot.Drive.settings(turn_rate=160)
+    await robot.Drive.straight(55)
+    await robot.Drive.turn(-98)     #mission number 5
+    await robot.Drive.straight(-260) 
+    await robot.Drive.straight(180)  #push the boulders back
+    # robot.Drive.straight(590)
+    await robot.Drive.straight(200)
+    await robot.Drive.turn(12)
+    await robot.Drive.straight(510)
+    await robot.Drive.turn(41)
+    robot.Drive.settings(straight_speed=800)
+    await robot.Drive.straight(-360)
+    await robot.Drive.straight(220)
+    await robot.Drive.turn(-60)
+    await robot.Drive.straight(890)
+    await robot.Drive.turn(-90)
+    await robot.Drive.straight(640)
+    #1000, 640

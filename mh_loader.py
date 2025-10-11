@@ -20,9 +20,17 @@ async def loader(robot,runs=[]):
                     for run in runs[programID]:
                         #Run until completion or Center Button Pressed
                         await multitask(run(robot),robot.cancelRun(), race=True)
+                        robot.Drive.stop()
+                        robot.Right_attach.stop()
+                        robot.Left_attach.stop()
+                        await wait(500)
             else:
                     #Run until completion or Center Button Pressed
                     await multitask(runs[programID](robot),robot.cancelRun(), race=True)
+                    robot.Drive.stop()
+                    robot.Right_attach.stop()
+                    robot.Left_attach.stop()
+                    await wait(500)
                 # Code Complete
             robot.light.on(Color.GREEN)
             programID += 1

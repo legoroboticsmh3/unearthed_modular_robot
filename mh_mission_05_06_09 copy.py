@@ -1,0 +1,43 @@
+from pybricks.hubs import PrimeHub
+from pybricks.pupdevices import Motor, ColorSensor, UltrasonicSensor, ForceSensor
+from pybricks.parameters import Button, Color, Direction, Port, Side, Stop
+from pybricks.robotics import DriveBase
+from pybricks.tools import wait, StopWatch
+
+hub = PrimeHub()
+
+R_Motor = Motor(Port.E,positive_direction=Direction.COUNTERCLOCKWISE, gears=[28, 20])
+L_Motor = Motor(Port.F,positive_direction=Direction.CLOCKWISE, gears=[28, 20])
+Drive= DriveBase(L_Motor,R_Motor,62.4,110)
+Drive.use_gyro(True)
+
+Drive.settings(turn_rate=160)
+# Attach_Right=Motor(Port.D)
+# Attach_Left=Motor(Port.C)
+#Drive.straight(680)  #this is the distance for the original wihout the mission 9 back attachment
+Drive.straight(196)  
+Drive.turn(90)
+
+Drive.straight(500)
+Drive.turn(49)
+Drive.straight(49)
+Drive.settings(turn_rate=75)   #to get the boulders down 
+Drive.turn(-39)        #to get the boulders down Mission number 6
+Drive.settings(turn_rate=160)
+Drive.straight(55)
+Drive.turn(-98)     #mission number 5
+Drive.straight(-260) 
+Drive.straight(180)  #push the boulders back
+# Drive.straight(590)
+Drive.straight(200)
+Drive.turn(12)
+Drive.straight(510)
+Drive.turn(41)
+Drive.settings(straight_speed=800)
+Drive.straight(-360)
+Drive.straight(220)
+Drive.turn(-60)
+Drive.straight(890)
+Drive.turn(-90)
+Drive.straight(640)
+#1000, 640
