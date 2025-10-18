@@ -18,5 +18,3 @@ Drive.straight(-70)
 Drive.straight(70)
 Drive.turn(-73) 
 Drive.straight(680)
-
-
