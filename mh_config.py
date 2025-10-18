@@ -18,7 +18,7 @@ CONFIG = {
     'attach': {
         'speed':        20,
         'left':         [Port.A, [28, 36]],
-        'right':        [Port.B, [28, 36]],
+        'right':        [Port.B, [20, 28]],
         
     },
     'line': {
