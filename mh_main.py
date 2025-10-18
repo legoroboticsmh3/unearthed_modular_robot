@@ -17,19 +17,25 @@ robot = Robot(CONFIG)
 #robot.speaker.play_notes(MY_SONGS['STAR_WARS_1'], tempo=150)
 
 #Runs
-from mh_mission_7 import run_2
+from mh_mission_7 import run_2 #blue side code
 from mh_mission_09_10 import run_1
-#from mh_mission_10_11 import run_1
 from mh_mission_05_06_09 import run_3
-#from mh_mission_01_02 import run_3
+#from mh_mission_10_11 import run_1   red side code
+#from mh_mission_01_02 import run_3  red side code
+#from mh_mission_03_04 import run_5  red side code
+
+
 #Remote Control
 #from mh_run_remote import run_remote
 
 #Run Loader Menu
 async def main():
     #full run loader
+
     await multitask(loader(robot,[run_1,run_2,run_3]))
-    #await multitask(loader(robot,[run_1]))
+
+   # await multitask(loader(robot,[run_5])) red side code
+
 run_task(main())
 
 
