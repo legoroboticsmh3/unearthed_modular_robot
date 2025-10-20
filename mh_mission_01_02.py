@@ -1,9 +1,4 @@
-from pybricks.tools import wait
-from pybricks.parameters import Button, Color
-from urandom import randint
-from umath import pi, sqrt
-
-async def run_3(robot):
+async def run_5(robot):
     print("Starting Run: " + __name__)
 
     await robot.Drive.straight(670)

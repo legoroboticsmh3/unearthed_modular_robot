@@ -14,7 +14,7 @@ async def run_3(robot):
     await robot.Drive.straight(196)  
     await robot.Drive.turn(90)
 
-    await robot.Drive.straight(500)
+    await robot.Drive.straight(510)
     await robot.Drive.turn(49)
     await robot.Drive.straight(49)
     robot.Drive.settings(turn_rate=75)   #to get the boulders down 
@@ -32,8 +32,8 @@ async def run_3(robot):
     robot.Drive.settings(straight_speed=500)
     await robot.Drive.straight(-354)
     await robot.Drive.straight(220)
-    # await robot.Drive.turn(-60)
-    # await robot.Drive.straight(890)
-    #await robot.Drive.turn(-90)
-    #await robot.Drive.straight(640)
+    await robot.Drive.turn(-60)
+    await robot.Drive.straight(890)
+    await robot.Drive.turn(-75)
+    await robot.Drive.straight(640)
     #1000, 640
