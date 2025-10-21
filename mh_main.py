@@ -18,8 +18,8 @@ robot = Robot(CONFIG)
 
 #Runs
 #blue side code
-from mh_mission_7 import run_2 
 from mh_mission_09_10 import run_1
+from mh_mission_7 import run_2 
 from mh_mission_05_06_09 import run_3
 # from mh_mission_11 import run_6
 #red side code

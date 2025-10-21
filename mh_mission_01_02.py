@@ -1,6 +1,25 @@
+from pybricks.tools import wait
+
 async def run_5(robot):
     print("Starting Run: " + __name__)
 
+    await robot.Drive.straight(610)
+    await robot.Drive.turn(-43.5)
+    await robot.Drive.straight(99)
+    robot.Right_attach.dc(-65)
+    await wait(450)
+    await robot.Drive.straight(50)
+    await robot.Right_attach.run_angle(500,60) 
+    await robot.Drive.straight(80)
+    await robot.Right_attach.run_angle(500,60) 
+    #await robot.Drive.straight(153)
+    #await robot.Right_attach.run_angle(500,-180) 
+    await robot.Drive.straight(-200) 
+    await robot.Drive.turn(44.5)
+    await robot.Drive.straight(-670)
+
+
+    '''
     await robot.Drive.straight(670)
     await robot.Drive.turn(-43.5)
     await robot.Drive.straight(253)
@@ -8,6 +27,10 @@ async def run_5(robot):
     await robot.Drive.straight(-200) 
     await robot.Drive.turn(44.5)
     await robot.Drive.straight(-670)
+    '''
+
+
+
     #wait(10000)
     #await robot.Drive.straight(550)
     #Right_attach.run_angle(200, 130)
