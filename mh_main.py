@@ -24,9 +24,8 @@ from mh_mission_05_06_09 import run_3
 # from mh_mission_11 import run_6
 #red side code
 from mh_mission_12 import run_4
-from mh_mission_01_02 import run_5 
+from mh_mission_01_02 import run_5
 from mh_mission_03_04 import run_6
-
 
 #Remote Control
 #from mh_run_remote import run_remote

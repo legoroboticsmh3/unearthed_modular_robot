@@ -12,23 +12,22 @@ async def run_6(robot):
     await robot.Drive.straight(-970)
     await robot.Drive.turn(-91)
     await robot.Right_attach.run_angle(150,-100)
-    await robot.Left_attach.run_angle(240,117.6*-.77)
+    await robot.Left_attach.run_angle(240,117.5*-.77)
     robot.Drive.settings(straight_speed=50)
 
     #approach opening and lower arm to pickup precious artifact
-    await robot.Drive.straight(55)
-    await robot.Left_attach.run_angle(200,-12)
+    await robot.Drive.straight(115)
+    await robot.Left_attach.run_angle(200,-14.6)
+    await robot.Left_attach.run_angle(200,-6)
 
-    # pickup precious artifact
-    await robot.Drive.straight(67)
-    await robot.Left_attach.run_angle(200,-14*-.77)
+    # pickup precious artifactngle(200,-14*-.77)
     await wait(500)
     await robot.Right_attach.run_angle(100,100)
     await robot.Drive.straight(-145)
     robot.Drive.settings(straight_speed=500)
     await robot.Drive.turn(90)
     await wait(500)
-    await robot.Drive.turn(-45)
+    await robot.Drive.turn(-44)
     await robot.Left_attach.run_angle(500,40*-.77)
     robot.Drive.settings(straight_speed=120)
     await robot.Drive.straight(390.5)
@@ -39,4 +38,7 @@ async def run_6(robot):
     robot.Drive.settings(straight_speed=250)
     await robot.Drive.straight(-364.5)
     await robot.Drive.turn(45)
+    robot.Drive.settings(straight_speed=500)
     await robot.Drive.straight(974)
+    await robot.Drive.straight(67)
+    await robot.Left_attach.run_a
