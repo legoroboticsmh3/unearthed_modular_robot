@@ -1,20 +1,42 @@
-from pybricks.hubs import PrimeHub
-from pybricks.pupdevices import Motor, ColorSensor, UltrasonicSensor, ForceSensor
-from pybricks.parameters import Button, Color, Direction, Port, Side, Stop
-from pybricks.robotics import DriveBase
-from pybricks.tools import wait, StopWatch
+from pybricks.tools import wait
+from pybricks.parameters import Button, Color
+from urandom import randint
+from umath import pi, sqrt
 
-hub = PrimeHub()
 
-R_Motor = Motor(Port.E,positive_direction=Direction.COUNTERCLOCKWISE, gears=[28, 20])
-L_Motor = Motor(Port.F,positive_direction=Direction.CLOCKWISE, gears=[28, 20])
-Drive= DriveBase(L_Motor,R_Motor,62.4,110)
-Drive.use_gyro(True)
+async def run_7(robot):
+    print("Starting Run: " + __name__)
 
-Drive.straight(-771)
-Drive.turn(-90)
-Drive.straight(-480)
-Drive.turn(-129)
-Drive.straight(-290)
-Drive.straight(290)
-Drive.turn(-45)
+    robot.Drive.settings(turn_rate=160)
+    # Attach_Right=Motor(Port.D)
+    # Attach_Left=Motor(Port.C)
+    #Drive.straight(680)  #this is the distance for the original wihout the mission 9 back attachment
+    await robot.Drive.straight(250)  
+    await robot.Drive.turn(-45)
+    await robot.Drive.straight(265)
+
+    await robot.Right_attach.run_angle(200,80*-1) # the attachment to latch to the sale
+    print("Latching to Sale")
+    #robot.Drive.settings(straight_speed=200)
+    await robot.Drive.straight(-73)
+    print("Pulling Sale Back")
+    await robot.Right_attach.run_angle(180,-80*-1)
+    print("Releasing Sale Latch")
+    wait(100)
+    print("wait")
+    robot.Drive.settings(straight_speed=500)
+    #robot.Drive.settings(turn_rate=160)
+    print("Driving Backwards")
+    await robot.Drive.straight(-50)
+    print("Backing Up Complete")
+    await robot.Drive.straight(20)
+    print("Adjusting Position")
+    await robot.Right_attach.run_angle(200,80*-1)
+    await robot.Drive.straight(50)
+    await robot.Right_attach.run_angle(200,-80*-1)
+    print("Lowering Attachment")
+    await robot.Drive.straight(-300)
+    print("Final Backward Move Complete")
+
+
+    
