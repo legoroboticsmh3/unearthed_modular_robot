@@ -1,6 +1,6 @@
 from pybricks.tools import wait, multitask
 from pybricks.parameters import Button, Stop
-from mh_controllers import StartPID
+from .mh_controllers import StartPID
 
 def FixNone(robot, value, fix):
     if isinstance(value, type(None)):

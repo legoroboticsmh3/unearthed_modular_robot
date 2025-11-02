@@ -1,7 +1,7 @@
 from pybricks.tools import wait, Matrix
 from pybricks.parameters import Button, Color
 from pybricks.iodevices import XboxController
-from mh_media import MY_ICONS
+from ..mh_media import MY_ICONS
 from umath import *
 
 def ConnectRemote(self):

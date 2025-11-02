@@ -3,7 +3,7 @@ from pybricks.parameters import Button, Color, Stop
 from pybricks.tools import wait, StopWatch, Matrix
 from pybricks.robotics import DriveBase
 #from mh_media import MY_ICONS
-from mh_port_debug import PortDebug
+from utils.mh_port_debug import PortDebug
 from umath import pi
 
 class Robot:
