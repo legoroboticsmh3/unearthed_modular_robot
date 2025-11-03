@@ -40,8 +40,8 @@ async def run_8(robot):
     await robot.Drive.turn(120)
     await robot.Drive.straight(125) #reach the who lives here area
     robot.Drive.settings(turn_rate=30)
-    await robot.Drive.turn(-39) 
-    robot.Drive.settings(turn_rate=160)
+    await robot.Drive.turn(-39) #flip the red lever
+    robot.Drive.settings(turn_rate=160) #reset the turn rate
 
 
    # # robot.Drive.straight(590)

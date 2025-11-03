@@ -1,5 +1,5 @@
 from pybricks.tools import wait
-from mh_controllers import StartPID
+from .mh_controllers import StartPID
 
 # Method Move(amount='0,0', unit='xy', speed=60, direction=lastDirection, chassis=lastChassis, directionCurve=True, chassisCurve=True)
 #   Parameters:
