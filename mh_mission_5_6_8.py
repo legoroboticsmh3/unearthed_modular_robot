@@ -1,6 +1,6 @@
 from pybricks.tools import wait
 
-async def run_8(robot):
+async def run_3(robot):
     print("Starting Run: " + __name__)
  
     await robot.Drive.straight(430)
@@ -20,28 +20,53 @@ async def run_8(robot):
    #  await robot.Right_attach.run_angle(500,-100) #hammer down 4th time
    #  await robot.Right_attach.run_angle(500,85) #hammer up
 
-   #  #continue to mission 5 and 6
-    await robot.Drive.straight(-105)
+   #  #continue to mission 5 and 6 (this version does not push the boulders back)
+    await robot.Drive.straight(-104)
     await robot.Drive.turn(-90)
-    await robot.Drive.straight(55)
+    await robot.Drive.straight(80)
     await robot.Drive.turn(90)
-    await robot.Drive.straight(335) 
-    wait(100)
+    await robot.Drive.straight(340) 
     await robot.Drive.turn(45)
-    await robot.Drive.straight(50) #reach the Boulder station
+    await robot.Drive.straight(70) #reach the Boulder station
     robot.Drive.settings(turn_rate=150)   #to get the boulders down 
     await robot.Drive.turn(-39)        #flip the red lever
     robot.Drive.settings(turn_rate=160)
-    #await robot.Drive.straight(55)
-    await robot.Drive.turn(-115)     #turn an angle to align and push the boulders back
-    await robot.Drive.straight(-263) #push the boulders back
-    await robot.Drive.turn(-8)
-    await robot.Drive.straight(310)  
-    await robot.Drive.turn(120)
-    await robot.Drive.straight(125) #reach the who lives here area
-    robot.Drive.settings(turn_rate=30)
-    await robot.Drive.turn(-39) #flip the red lever
-    robot.Drive.settings(turn_rate=160) #reset the turn rate
+
+    await robot.Drive.turn(-20) #align to reach who lives there
+    await robot.Drive.straight(-4) #moving straight for who lives there and try to push theelever
+    await robot.Right_attach.run_angle(500,-70) #put the hammer down
+    await robot.Drive.straight(55) # here is where the hammer reaches the who lives there
+    robot.Drive.settings(turn_rate=50)
+    await robot.Drive.turn(-50)  
+    robot.Drive.settings(turn_rate=150)   
+    # await robot.Drive.straight(-40) 
+
+    await robot.Right_attach.run_angle(360,70) # life the arm up
+    await robot.Drive.straight(20) # move towards 
+    await robot.Drive.turn(-10)
+    await robot.Drive.straight(550)
+    await robot.Drive.turn(-130)
+    await robot.Drive.straight(40)
+    await robot.Right_attach.run_angle(500,-60) # hammer the Tip Scales
+    await robot.Drive.straight(-40)
+    await robot.Right_attach.run_angle(500,60)
+    await robot.Right_attach.run_angle(500,-50)
+    await robot.Drive.turn(-20)
+    await robot.Drive.straight(90)
+
+
+
+
+#     await robot.Drive.straight(55)
+#     await robot.Drive.turn(-115)     #turn an angle to align and push the boulders back
+#     #await robot.Drive.straight(-263) #push the boulders back
+#    # await robot.Drive.turn(-8)
+#     #await robot.Drive.straight(310)  
+#     await robot.Drive.turn(120)
+#     await robot.Drive.straight(125) #reach the who lives here area
+#     robot.Drive.settings(turn_rate=30)
+#     await robot.Drive.turn(-39) #flip the red lever
+#     robot.Drive.settings(turn_rate=160) #reset the turn rate
 
 
    # # robot.Drive.straight(590)

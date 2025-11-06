@@ -10,50 +10,31 @@ from pybricks.tools import wait
 
 #going to the mission model mission 3
 async def run_4(robot):
-    robot.Drive.settings(straight_speed=650)
-    robot.Drive.settings(turn_rate=160)
+    # robot.Drive.settings(straight_speed=650)
+    # robot.Drive.settings(turn_rate=160)
 
-    await robot.Drive.straight(550)
-    #await robot.Right_attach.run_angle(200, 130*-1)
-    #right arm down to grab
-    robot.Right_attach.dc(-75)
-    await wait(250)
+    # await robot.Drive.straight(360)
+    # await robot.Drive.turn(-90)
+    # await robot.Drive.straight(640)
+    # await robot.Drive.turn(25)
+    # await robot.Drive.straight(-175)
+    # await robot.Drive.turn(-27)
+    # await robot.Drive.turn(10)
+    # await robot.Drive.straight(-10)
+    # await robot.Drive.straight(20)
+    # await robot.Left_attach.run_angle(500,-823)
 
-    # drive back and lift right arm up
-    robot.Right_attach.stop()
-    await robot.Drive.straight(-120)
-    await robot.Right_attach.run_angle(200, -130*-1)
+    # # Turn to Dino 
+    # await robot.Drive.turn(23)
 
-    # drive straight to lift ship up
-    await robot.Drive.straight(270)
+    # # Lower the Right Arm and Move
+    # await robot.Right_attach.run_angle(360,-90)
+    # await robot.Drive.straight(210)
+    # await robot.Drive.turn(24)
+    # await robot.Drive.straight(10)
 
-    # deliver
-    await robot.Left_attach.run_angle(200, 70*-0.77)
-    await robot.Left_attach.run_angle(200, -70*-0.77)
-    # drive back home
-    await robot.Drive.straight(-550)
-
-'''   await robot.Drive.turn(-90)
-    await robot.Drive.straight(182)
-    await robot.Drive.turn(90)
-    await robot.Right_attach.run_angle(200, 130*-1)
-    await robot.Drive.straight(-60)
-    await robot.Drive.straight(360)'''
-
- 
-
-'''
-    robot.Drive.settings(straight_speed=350)
-    robot.Drive.settings(turn_rate=160)
-    await robot.Drive.straight(470)
-    await robot.Right_attach.run_angle(200, 130*-1)
-    await robot.Drive.straight(-120)
-    await robot.Right_attach.run_angle(200, -130*-1)
-    await robot.Drive.turn(-90)
-    await robot.Drive.straight(182)
-    await robot.Drive.turn(90)
-    await robot.Right_attach.run_angle(200, 130*-1)
-    await robot.Drive.straight(-60)
-    await robot.Drive.straight(370)
-    await robot.Drive.straight(-600)
-'''
+     #  Lift the Dino
+     await robot.Right_attach.run_angle(720,150)
+     await robot.Drive.straight(-100)
+     await robot.Drive.turn(-90)
+     await robot.Drive.straight(300)
