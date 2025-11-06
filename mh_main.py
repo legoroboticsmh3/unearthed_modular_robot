@@ -27,7 +27,8 @@ from mh_mission_12 import run_4
 from mh_mission_01_02 import run_5
 from mh_mission_03_04 import run_6
 from mh_mission_09 import run_7   #this is to test mission 9 (what's on sale)
-
+from mh_mission_5_6_8 import run_8  
+from mh_mission_03_13 import run_9 
 
 #Remote Control
 #from utils.mh_run_remote import run_remote
@@ -36,7 +37,7 @@ from mh_mission_09 import run_7   #this is to test mission 9 (what's on sale)
 async def main():
     #full run loader
 
-    await multitask(loader(robot,[run_1,run_2,run_3,run_4,run_5,run_6,run_7]))
+    await multitask(loader(robot,[run_1,run_2,run_3,run_4,run_5,run_6,run_7,run_8,run_9]))
 
    # await multitask(loader(robot,[run_5])) red side code
 
