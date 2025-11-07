@@ -31,7 +31,6 @@ async def run_5(robot):#n
     await robot.Drive.straight(-210)
     await robot.Drive.turn(43.49)
     await robot.Drive.straight(-180)
+    await robot.Drive.turn(88)
     #drives back to base
-    # await robot.Drive.straight(-201) 
-    # await robot.Drive.turn(43.49)
-    # await robot.Drive.straight(-660)
+
