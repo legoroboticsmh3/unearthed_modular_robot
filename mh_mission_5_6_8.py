@@ -4,55 +4,58 @@ async def run_3(robot):
     print("Starting Run: " + __name__)
  
     await robot.Drive.straight(430)
-    #await robot.Right_attach.run_angle(500,-100) #hammer down 1st time
-    robot.Right_attach.dc(-60)
-    await wait(500)
-    await robot.Right_attach.run_angle(500,85) #hammer  up
-    #await robot.Right_attach.dc(-100) #hammer down 2nd time
-    # await robot.Right_attach.run_angle(500,-100)
-    robot.Right_attach.dc(-60)
-    await wait(500)
-    await robot.Right_attach.run_angle(500,85) #hammer up
-    #await robot.Right_attach.run_angle(500,-100) #hammer down 3rd time
-    robot.Right_attach.dc(-60)
-    await wait(500)
-    await robot.Right_attach.run_angle(500,120) #hammer up
+  
+    # robot.Right_attach.dc(-60)
+    # await wait(500)
+    # await robot.Right_attach.run_angle(500,85) #hammer  up
+    # robot.Right_attach.dc(-60)
+    # await wait(500)
+    # await robot.Right_attach.run_angle(500,85) #hammer up
+    # robot.Right_attach.dc(-60)
+    # await wait(500)
+    # await robot.Right_attach.run_angle(500,120) #hammer up
    #  await robot.Right_attach.run_angle(500,-100) #hammer down 4th time
    #  await robot.Right_attach.run_angle(500,85) #hammer up
 
    #  #continue to mission 5 and 6 (this version does not push the boulders back)
     await robot.Drive.straight(-104)
     await robot.Drive.turn(-90)
-    await robot.Drive.straight(80)
+    await robot.Drive.straight(70)
     await robot.Drive.turn(90)
     await robot.Drive.straight(340) 
     await robot.Drive.turn(45)
-    await robot.Drive.straight(70) #reach the Boulder station
+    await robot.Drive.straight(75) #reach the Boulder station
     robot.Drive.settings(turn_rate=150)   #to get the boulders down 
     await robot.Drive.turn(-39)        #flip the red lever
     robot.Drive.settings(turn_rate=160)
 
     await robot.Drive.turn(-20) #align to reach who lives there
-    await robot.Drive.straight(-4) #moving straight for who lives there and try to push theelever
-    await robot.Right_attach.run_angle(500,-70) #put the hammer down
-    await robot.Drive.straight(55) # here is where the hammer reaches the who lives there
+    await robot.Drive.straight(-25) #moving straight for who lives there and try to push the lever
+    await robot.Right_attach.run_angle(500,-80) #put the hammer down
+    await robot.Right_attach.run_angle(500,20)
+    await robot.Drive.straight(80) # here is where the hammer reaches the who lives there
+    await robot.Right_attach.run_angle(500,-30)
     robot.Drive.settings(turn_rate=50)
     await robot.Drive.turn(-50)  
     robot.Drive.settings(turn_rate=150)   
     # await robot.Drive.straight(-40) 
-
-    await robot.Right_attach.run_angle(360,70) # life the arm up
+    
+    #continue to mission Tip the scales and whats on scale
     await robot.Drive.straight(20) # move towards 
+    await robot.Right_attach.run_angle(360,70) # life the arm up
     await robot.Drive.turn(-10)
     await robot.Drive.straight(550)
     await robot.Drive.turn(-130)
     await robot.Drive.straight(40)
     await robot.Right_attach.run_angle(500,-60) # hammer the Tip Scales
+    await robot.Drive.turn(-30)
     await robot.Drive.straight(-40)
-    await robot.Right_attach.run_angle(500,60)
-    await robot.Right_attach.run_angle(500,-50)
-    await robot.Drive.turn(-20)
-    await robot.Drive.straight(90)
+    await robot.Right_attach.run_angle(500,70)
+    await robot.Right_attach.run_angle(500,-80)
+    # await robot.Drive.turn(-20)
+    await robot.Drive.straight(200) #whats on scale
+    await robot.Right_attach.run_angle(500,70)
+    await robot.Drive.straight(-100)
 
 
 

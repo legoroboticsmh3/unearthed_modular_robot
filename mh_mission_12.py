@@ -9,7 +9,7 @@ from pybricks.tools import wait
 # Drive=DriveBase(L_motor, R_motor, 62.4, 110)
 
 #going to the mission model mission 3
-async def run_4(robot):
+async def run_10(robot):
     # robot.Drive.settings(straight_speed=650)
     # robot.Drive.settings(turn_rate=160)
 
