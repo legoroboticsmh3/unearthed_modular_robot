@@ -23,13 +23,11 @@ from mh_mission_7 import run_2   #Heavy lifting
 from mh_mission_5_6_8 import run_3
 # from mh_mission_11 import run_6
 #red side code
-from mh_mission_13 import run_4
-from mh_mission_01_02 import run_5
+from mh_mission_12 import run_4
+from mh_mission_02 import run_5
 from mh_mission_03_13 import run_6
-from mh_mission_09 import run_7   #this is to test mission 9 (what's on sale)
-#from mh_mission_5_6_8 import run_8  
-from mh_mission_03_13 import run_9 
-#from mh_mission_12 import run_8  #this is to test mission 12 (angler artifacts)                 
+from mh_mission_09 import run_7   #this is to test mission 9 (what's on sale) 
+from mh_mission_03_13 import run_9                 
 
 #Remote Control
 #from utils.mh_run_remote import run_remote
