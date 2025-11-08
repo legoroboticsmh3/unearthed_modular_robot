@@ -11,18 +11,19 @@
 async def run_11(robot): # was "run_6"
     print("Starting Run: " + __name__)
     robot.Drive.use_gyro(True)
-    # await robot.Drive.straight(250)
-    # await robot.Drive.turn(90)
-    # await robot.Drive.straight(-670)
-    # await robot.Drive.turn(25)
-    # await robot.Drive.straight(65)
-    # await robot.Right_attach.run_angle(250,-600)
 
-    await robot.Drive.straight(-200)
+    await robot.Drive.straight(-315) #was -315
     await robot.Drive.turn(90)
-    await robot.Drive.straight(400)
-#Drive.straight(-200)
-#Drive.turn(-25)
-#Drive.straight(700)
+    await robot.Drive.straight(-660) # Goes to mission 11
+    await robot.Drive.turn(30)
+    await robot.Drive.straight(-310)
+    await robot.Drive.turn(-40)#was -40
+    await robot.Left_attach.run_angle(200, 340) # Turns gear to lift up artifact
+    await robot.Drive.turn(40)
+    await robot.Drive.straight(140)
+    await robot.Drive.turn(-18)
+    robot.Drive.settings(straight_speed=900) # increases speed to move fast
+    await robot.Drive.straight(-900) # goes to blue base
+    robot.Drive.settings(straight_speed=500) # reset the speed to normal
 
 
