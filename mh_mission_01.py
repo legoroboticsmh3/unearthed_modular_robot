@@ -1,14 +1,15 @@
 from pybricks.tools import wait
 
 
-#Shows mission 5
-async def run_5(robot):#n
+
+async def run_12(robot):#n
     print("Starting Run: " + __name__)#D
-    robot.Drive.settings(straight_speed=400)
+    robot.Drive.settings(straight_speed=100)
     robot.Drive.settings(turn_rate=100)
 
-    await robot.Drive.straight(180)
-    await robot.Drive.turn(88)
-    await robot.Drive.straight(90)
-    await robot.Left_attach.run_angle(80)
-    await robot.Left_attach.run_angle(-80)
+    await robot.Drive.straight(688)
+    await robot.Drive.turn(-86)
+    await robot.Left_attach.run_angle(100,20)
+    await wait(100)
+    await robot.Drive.straight(55)
+    await robot.Left_attach.run_angle(1000, 90*-0.77)

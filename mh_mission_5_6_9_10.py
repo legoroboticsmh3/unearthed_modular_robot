@@ -4,7 +4,8 @@ async def run_3(robot):
     print("Starting Run: " + __name__)
  
     await robot.Drive.straight(430)
-  
+    
+  #Mission Silo 8
     # robot.Right_attach.dc(-60)
     # await wait(500)
     # await robot.Right_attach.run_angle(500,85) #hammer  up
@@ -33,6 +34,13 @@ async def run_3(robot):
     await robot.Drive.straight(-25) #moving straight for who lives there and try to push the lever
     await robot.Right_attach.run_angle(500,-80) #put the hammer down
     await robot.Right_attach.run_angle(500,20)
+
+    # await robot.Drive.straight(-40)
+    # await robot.Drive.turn(-20)
+    # await robot.Drive.straight(40)
+
+
+
     await robot.Drive.straight(80) # here is where the hammer reaches the who lives there
     await robot.Right_attach.run_angle(500,-30)
     robot.Drive.settings(turn_rate=50)
@@ -40,7 +48,7 @@ async def run_3(robot):
     robot.Drive.settings(turn_rate=150)   
     # await robot.Drive.straight(-40) 
     
-    #continue to mission Tip the scales and whats on scale
+    #continue to mission Tip the scales and whats on scale (Missions 9 and 10)
     await robot.Drive.straight(20) # move towards 
     await robot.Right_attach.run_angle(360,70) # life the arm up
     await robot.Drive.turn(-10)
