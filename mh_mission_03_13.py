@@ -1,11 +1,13 @@
 from pybricks.tools import wait
 
+
 async def run_6(robot):
     print("Starting Run: " + __name__)
-    robot.Drive.settings(straight_speed=400)
+    robot.Drive.use_gyro(True)
+    robot.Drive.settings(straight_speed=500)
     robot.Drive.settings(turn_rate=100)
     
-    #Drives to mission 03
+    #Drives to mission 03a
     await robot.Drive.straight(660)
     await robot.Drive.turn(41)
     await wait(500)
@@ -22,7 +24,7 @@ async def run_6(robot):
     
 
     #Lifts up mission 03
-    await robot.Right_attach.run_angle(50,100)
+    await robot.Right_attach.run_angle(67,100)
     await robot.Right_attach.run_angle(350,33)
     await wait(500)
 
@@ -35,7 +37,7 @@ async def run_6(robot):
     await wait(100)
     await robot.Right_attach.run_angle(100,-132)
     await wait(200)
-    await robot.Drive.straight(139)
+    await robot.Drive.straight(145)
 
 
     #lifts up mission 13

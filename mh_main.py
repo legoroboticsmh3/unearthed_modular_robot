@@ -39,18 +39,11 @@ async def main():
     #full run loader
 
     #await multitask(loader(robot,[run_1,run_2,run_3,run_4,run_5,run_6,run_7,run_9,run_11,run_12]))
-    await multitask(loader(robot,[run_4,run_5,run_6,run_11,run_3]))
+    await multitask(loader(robot,[run_4,run_5,run_6,run_11,run_2,run_3]))
                                   
 
    # await multitask(loader(robot,[run_5])) red side code
-   # await multitask(loader(robot,[run_])) #testing mission 12
+    #await multitask(loader(robot,[run_11])) #testing mission 12
 
 run_task(main())
-
-
-#robot.display.number(1)
-#wait(100000000)
-#Finish Main Sequence
-#robot.speaker.play_notes(MY_SONGS['STAR_WARS_1'], tempo=120)
-#robot.speaker.play_notes(MY_SONGS['STAR_WARS_2'], tempo=120)
 

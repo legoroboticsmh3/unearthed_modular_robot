@@ -23,13 +23,13 @@ async def run_2(robot):
 
     #Adding code below to see if I can solve mission 10 and reach 
 
-    await robot.Drive.straight(-630)
-    robot.Drive.settings(turn_rate=75)
-    await robot.Drive.turn(-40)
-    await robot.Drive.straight(420)
-    await robot.Right_attach.run_angle(100,80*-1)
-    await robot.Right_attach.run_angle(200,-100*-1)
-    await robot.Drive_straight(-200)
+    await robot.Drive.straight(-813)
+    # robot.Drive.settings(turn_rate=75)
+    # await robot.Drive.turn(-40)
+    # await robot.Drive.straight(420)
+    # await robot.Right_attach.run_angle(100,80*-1)
+    # await robot.Right_attach.run_angle(200,-100*-1)
+    # await robot.Drive_straight(-200)
 
 
 
