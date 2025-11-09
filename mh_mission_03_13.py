@@ -15,7 +15,7 @@ async def run_6(robot):
     
     #Drives to mission 03a
     await robot.Drive.straight(680)
-    await robot.Drive.turn(41)
+    await robot.Drive.turn(43)
     #####await wait(500)
 
     #Drives and get ready position to lift the missions 03 
@@ -30,7 +30,8 @@ async def run_6(robot):
     
 
     #Lifts up mission 03
-    await robot.Right_attach.run_angle(67,100)
+    await robot.Right_attach.run_angle(67,90)
+    await wait(1200)
     await robot.Right_attach.run_angle(350,33)
     await wait(500)
 
