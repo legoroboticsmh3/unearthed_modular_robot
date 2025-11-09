@@ -3,23 +3,29 @@ from pybricks.tools import wait
 
 async def run_6(robot):
     print("Starting Run: " + __name__)
-    robot.Drive.use_gyro(True)
+    #robot.Drive.use_gyro(True)
     robot.Drive.settings(straight_speed=500)
     robot.Drive.settings(turn_rate=100)
+
+    robot.Right_attach.dc(55)
+    robot.Left_attach.dc(85)
+    await wait(600)
+    robot.Right_attach.stop()
+    robot.Left_attach.stop()
     
     #Drives to mission 03a
-    await robot.Drive.straight(660)
+    await robot.Drive.straight(680)
     await robot.Drive.turn(41)
-    await wait(500)
+    #####await wait(500)
 
     #Drives and get ready position to lift the missions 03 
-    await robot.Left_attach.run_angle(100,20)
-    await wait(100)
+    #await robot.Left_attach.run_angle(100,20)
+    #await wait(100)
     await robot.Right_attach.run_angle(100,-120)
-    await wait(100)
-    await robot.Drive.straight(240)
-    await robot.Drive.turn(-14.5)
-    await wait(500)
+    #await wait(100)
+    await robot.Drive.straight(245)
+    #await robot.Drive.turn(-14.5)
+    #await wait(500)
 
     
 
@@ -32,12 +38,12 @@ async def run_6(robot):
     #Drives to mission 13
     robot.Drive.settings(straight_speed=100)
     #Adjusts
-    await robot.Drive.straight(-50)
-    await robot.Drive.turn(77.5)
-    await wait(100)
+    await robot.Drive.straight(-40)
+    await robot.Drive.turn(65)
+    #await wait(100)
     await robot.Right_attach.run_angle(100,-132)
     await wait(200)
-    await robot.Drive.straight(145)
+    await robot.Drive.straight(185)
 
 
     #lifts up mission 13
