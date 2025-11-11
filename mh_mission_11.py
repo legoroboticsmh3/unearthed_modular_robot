@@ -1,8 +1,9 @@
 from utils.mh_dump_all import dump_all
 from pybricks.tools import wait
 
+
 async def run_11(robot): # was "run_6"
-    robot_error_correction = -2
+    robot_correction_magic_number = -2
     # dump_all(robot)
     print("Starting Run: " + __name__)
     robot.Drive.settings(turn_rate=120)
@@ -10,26 +11,24 @@ async def run_11(robot): # was "run_6"
     #robot.Drive.use_gyro(True)
     await robot.Drive.straight(-300) #was -315
     await robot.Right_attach.run_angle(180, -55)
-    await wait(500)
         
     await robot.Drive.turn(90) # Turn and go to mission 11
-    await robot.Drive.straight(-(950+robot_error_correction)) 
+    await robot.Drive.straight(-(950+robot_correction_magic_number)) 
     await robot.Drive.turn(90)
 
-    await robot.Drive.straight(-(154+robot_error_correction)) # Go towards mission 11 and was -156
-    await robot.Drive.turn(-16)
-    await robot.Left_attach.run_angle(400, -500) # Turn the lever.
-    await wait(500) 
+    await robot.Drive.straight(-(158+robot_correction_magic_number)) # Go towards mission 11
+    await robot.Drive.turn(-18)
+    await robot.Left_attach.run_angle(300, -520) # Turn the lever.
 
     # Move back towards Mission 10
-    await robot.Drive.turn(47)
-    await robot.Drive.straight(55+robot_error_correction)
-    await robot.Drive.turn(-29)
-    await robot.Drive.straight(124)
+    await robot.Drive.turn(45)
+    await robot.Drive.straight(60)
+    await robot.Drive.turn(-20)
+    await robot.Drive.straight(120)
  
     # For the force move forward the arm and then back
     await robot.Right_attach.run_angle(180, 25)
-    await robot.Right_attach.run_angle(180, -95)
+    await robot.Right_attach.run_angle(270, -100)
 
     # Go towards the blue area.
     await robot.Drive.straight(-80)
@@ -37,4 +36,3 @@ async def run_11(robot): # was "run_6"
     robot.Drive.settings(straight_speed=800)
     await robot.Drive.straight(650)
     robot.Drive.settings(straight_speed=500)
-    
