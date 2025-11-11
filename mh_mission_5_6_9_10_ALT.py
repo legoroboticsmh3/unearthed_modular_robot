@@ -54,12 +54,12 @@ async def run_3(robot):
 
   await robot.Drive.turn(-140)
   await robot.Drive.straight(40)
-  await robot.Right_attach.run_angle(500,-60) # hammer the Tip Scales
+  await robot.Right_attach.run_angle(500,-70) # hammer the Tip Scales
   await robot.Drive.turn(-20)
   await robot.Drive.straight(-40)
 
   await robot.Right_attach.run_angle(500,80)
-  await robot.Right_attach.run_angle(500,-70)
+  await robot.Right_attach.run_angle(500,-90) #bring the hammer down to Whats on Sale
   
   await robot.Drive.straight(200) #whats on scale
   await robot.Drive.straight(-40)

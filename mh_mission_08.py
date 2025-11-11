@@ -33,12 +33,12 @@ async def run_8(robot):
     robot.Right_attach.dc(-60)
     await wait(500)
     await robot.Right_attach.run_angle(500,120) #hammer up
-    await robot.Right_attach.run_angle(500,-100) #hammer down 4th time
-    await robot.Right_attach.run_angle(500,85) #hammer up
+    #await robot.Right_attach.run_angle(500,-100) #hammer down 4th time
+    #await robot.Right_attach.run_angle(500,85) #hammer up
     await robot.Drive.straight(-120)
     await robot.Drive.turn(-15)
-    await robot.Drive.straight(215)
-    await robot.Drive.turn(-100)
+    await robot.Drive.straight(210)
+    await robot.Drive.turn(-105)
     await robot.Right_attach.run_angle(500,-100)
     await robot.Drive.straight(40)
     await robot.Right_attach.run_angle(500,100)
@@ -47,7 +47,7 @@ async def run_8(robot):
     #await robot.Drive.straight(-30)
     #await robot.Drive.straight(-430) #drive back
     await robot.Drive.turn(-90)
-    await robot.Drive.straight(235)
+    await robot.Drive.straight(270)
 
 
 

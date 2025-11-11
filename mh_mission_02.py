@@ -69,6 +69,7 @@ async def run_5(robot):#n
     await wait(1000)
     await robot.Drive.straight(-80)
     await robot.Drive.turn(-70)
+    robot.Drive.settings(straight_speed=1000)
     await robot.Drive.straight(450)    
 
     #await robot.Drive.straight(-180)

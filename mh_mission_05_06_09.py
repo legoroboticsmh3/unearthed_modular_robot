@@ -11,6 +11,7 @@ async def run_3(robot):
     # Attach_Right=Motor(Port.D)
     # Attach_Left=Motor(Port.C)
     #Drive.straight(680)  #this is the distance for the original wihout the mission 9 back attachment
+    robot.Drive.settings(straight_speed=500)
     await robot.Drive.straight(196)  
     await robot.Drive.turn(90)
 
