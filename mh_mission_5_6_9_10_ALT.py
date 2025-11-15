@@ -24,7 +24,7 @@ async def run_3(robot):
   #await robot.Drive.turn(10)  #(Tire Dirty Value)
   await robot.Drive.turn(13)  
   robot.Drive.settings(straight_speed=300)
-  await robot.Drive.straight(144)    #reach the who lives there station
+  await robot.Drive.straight(150)    #reach the who lives there station changed from 144
   robot.Drive.settings(turn_rate=100)
   await robot.Drive.turn(-40)            #flip the who lives there red lever
   robot.Drive.settings(turn_rate=160)
@@ -42,15 +42,17 @@ async def run_3(robot):
   await robot.Right_attach.run_angle(500,80)
   await robot.Right_attach.run_angle(500,-90) #bring the hammer down to Whats on Sale
   
-  robot.Drive.settings(straight_speed=300)
+  robot.Drive.settings(straight_speed=100)
   await robot.Drive.straight(220) #whats on scale
   await robot.Drive.straight(-40)
-  robot.Drive.settings(straight_speed=700)
-  await robot.Right_attach.run_angle(500,70)
+  robot.Drive.settings(straight_speed=100)
+  await robot.Right_attach.run_angle(500,50) #original was 70
+
   await robot.Drive.straight(-70)
 
   #return to base
   await robot.Drive.turn(-40)  #original was 37 this is the value we need to change so the robot does not go close to the who lives there area
+  robot.Drive.settings(straight_speed=700)
   await robot.Drive.straight(270)
   await robot.Drive.turn(54)
   await robot.Drive.straight(700)
