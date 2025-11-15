@@ -15,15 +15,15 @@ async def run_5(robot):#n
     #Drives to mission 2 area
     await robot.Drive.straight(650)
     await robot.Drive.turn(-40)
-    # await robot.Drive.turn(-20)
-    # await robot.Drive.straight(10)
 
     # Keep the attaahcment in the middle poistion
     await robot.Right_attach.run_angle(500,-80)
 
     #Drives to push and pick up topsoils
     robot.Drive.settings(straight_speed=200)
-    await robot.Drive.straight(155)
+    await robot.Drive.straight(100)
+    await robot.Drive.turn(-7.5)
+    await robot.Drive.straight(55)
 
     # #right arm lowers down to grab topsoil and push the topsoil
     robot.Right_attach.dc(-28)
