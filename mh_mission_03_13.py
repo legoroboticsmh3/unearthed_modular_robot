@@ -1,7 +1,7 @@
 from pybricks.tools import wait
 
 
-async def run_6(robot):
+async def run_3(robot):
     print("Starting Run: " + __name__)
     #robot.Drive.use_gyro(True)
     robot.Drive.settings(straight_speed=500)

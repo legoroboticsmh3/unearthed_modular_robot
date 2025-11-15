@@ -2,7 +2,7 @@ from pybricks.tools import wait
 
 
 #going to the mission model mission 3
-async def run_4(robot):
+async def run_1(robot):
     robot.Drive.settings(straight_speed=800)
     robot.Drive.settings(turn_rate=160)
     robot.Right_attach.dc(55)

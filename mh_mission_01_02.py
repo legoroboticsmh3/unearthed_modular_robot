@@ -1,8 +1,8 @@
 from pybricks.tools import wait,multitask
 
 
-#Shows mission 5
-async def run_5(robot):#n
+#Shows mission 2
+async def run_2(robot):#n
     print("Starting Run: " + __name__)
 
     robot.Drive.settings(straight_speed=400)

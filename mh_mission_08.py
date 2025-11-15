@@ -4,7 +4,7 @@ from urandom import randint
 from umath import pi, sqrt
 
 
-async def run_8(robot):
+async def run_7(robot):
     print("Starting Run: " + __name__)
     
     robot.Drive.settings(turn_rate=160)

@@ -1,6 +1,6 @@
 from pybricks.tools import wait
 
-async def run_3(robot):
+async def run_6(robot):
   print("Starting Run: " + __name__)
   robot.Drive.settings(straight_speed=700)
   await robot.Drive.straight(660) 

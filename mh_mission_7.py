@@ -3,9 +3,9 @@ from pybricks.parameters import Button, Color, Direction, Port, Side, Stop
 from urandom import randint
 from umath import pi, sqrt
 
-#alignment is 9B same as Run 6
+#alignment is 9B same as Run 5
 
-async def run_2(robot):
+async def run_5(robot):
     robot.Right_attach.run_angle(100,-90*-1,then=Stop.HOLD)
     robot.Drive.settings(straight_speed=500)
     robot.Drive.settings(turn_rate=75)
