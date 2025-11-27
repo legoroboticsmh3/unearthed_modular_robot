@@ -17,9 +17,17 @@ robot = Robot(CONFIG)
 #robot.speaker.play_notes(MY_SONGS['STAR_WARS_1'], tempo=150)
 
 #Runs
+#red side code
+from mh_mission_12 import run_1 #Salvage Operation
+from mh_mission_01_02 import run_2 #Surface Brushing & Map Reveal
+from mh_mission_03_13 import run_3 #Mineshaft Explorer & Statue Rebuild
+from mh_mission_11_10 import run_4 #Anglar Arifacts & Tip the Scales
 
 #blue side code
 from mh_mission_7 import run_5   #Heavy lifting
+from mh_mission_6_5_10_9_ALT import run_6 #Forge, Who Lives There, Tip the scales & Whats on Sale
+from mh_mission_08 import run_7 # Silo & Whats on Sale       
+from mh_mission_14 import run_8 # Deliver Artifacts
 #Remote Control
 #from utils.mh_run_remote import run_remote
 #dummy
@@ -27,6 +35,6 @@ from mh_mission_7 import run_5   #Heavy lifting
 async def main():
     #full run loader
 
-    await multitask(loader(robot,[run_5]))                            
+    await multitask(loader(robot,[run_1,run_2,run_3,run_4,run_5,run_6,run_7,run_8]))                             
 
 run_task(main())

@@ -37,12 +37,11 @@ class Robot:
         self.Drive= DriveBase(self.L_Motor,self.R_Motor,self.config['drive']['diameter'],self.config['drive']['width'])
 
 
-        # print(self.L_Motor.control.limits())
-        # print(self.R_Motor.control.limits())
+        #print(self.L_Motor.control.limits())
+        #print(self.R_Motor.control.limits())
 
-        # Commented out limits for new robot and chassis
-        # self.L_Motor.control.limits(1400, 2801, 760) #Spike Large motor default (1400, 2801, 560)
-        # self.R_Motor.control.limits(1400, 2801, 760) #Spike Large motor default (1400, 2801, 560)
+        self.L_Motor.control.limits(1400, 2801, 760) #Spike Large motor default (1400, 2801, 560)
+        self.R_Motor.control.limits(1400, 2801, 760) #Spike Large motor default (1400, 2801, 560)
 
         self.Drive.use_gyro(True)
         #while not self.gyro.ready():
