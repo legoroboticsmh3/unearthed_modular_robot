@@ -10,15 +10,15 @@ CONFIG = {
         'maxSpeed':     1000,
         'diameter':     62.4, #mm 56 (small spike wheel) or 195.9 (wheel 32019), 24mm (Small white wheel), 30 (Wedge Belt Wheel)
         'width':        110, #mm Distance between the centers of the two wheels
-        'left':         [Port.E,Direction.COUNTERCLOCKWISE, [12, 20]],
-        'right':        [Port.F,Direction.CLOCKWISE, [12, 20]],
+        'left':         [Port.F,Direction.COUNTERCLOCKWISE, [12, 20]],#switched numbers
+        'right':        [Port.E,Direction.CLOCKWISE, [12, 20]],
         'pid':          [1.7,0,0],
        
     },
     'attach': {
         'speed':        20,
-        'left':         [Port.A, [28, 36]],
-        'right':        [Port.B, [20, 28]],
+        'left':         [Port.B, [28, 36]],
+        'right':        [Port.A, [20, 28]],
         
     },
     'line': {
@@ -26,8 +26,8 @@ CONFIG = {
         'speed':        60,
         'black':        32,
         'white':        95,
-        'left':         Port.C,
-        'right':        Port.D,
+        'left':         Port.D,
+        'right':        Port.C,
         'pid':          [.65,0,0],
     },
 }

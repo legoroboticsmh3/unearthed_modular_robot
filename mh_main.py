@@ -20,7 +20,7 @@ robot = Robot(CONFIG)
 
 #blue side code
 from mh_mission_7 import run_5   #Heavy lifting
-from mh_mission_6_5_10_9_ALT import run_6  #Boulder and Who Lives There
+from mh_mission_08_05_06_09 import run_6  #Boulder and Who Lives There
 from mh_mission_08_09 import run_7  #Whats on Sale Back Attachment
 from mh_mission_01_02 import run_2 # Map Reveal and Topsoil Pickup
 from mh_mission_12 import run_1  # Mission Model Mission 12
@@ -32,6 +32,6 @@ from mh_mission_03_13 import run_3  # Mission Model Mission 3 and 13
 async def main():
     #full run loader
 
-    await multitask(loader(robot,[run_1,run_2,run_3]))                          
+    await multitask(loader(robot,[run_1,run_2,run_3,run_7,run_6, run_5]))                          
 
 run_task(main())
