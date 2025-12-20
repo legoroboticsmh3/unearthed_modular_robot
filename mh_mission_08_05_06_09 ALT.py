@@ -1,5 +1,10 @@
 from pybricks.tools import wait, multitask
 
+
+#Completing missions 5 and 6 in one motion
+
+
+
 async def run_6(robot):
   print("Starting Run: " + __name__)
 
@@ -35,7 +40,8 @@ async def run_6(robot):
   await robot.Drive.straight(16)
   await robot.Right_attach.run_angle(500,-85) #Complete the Forge
   await robot.Right_attach.run_angle(500,50)
-  await robot.Right_attach.run_angle(500,-50)
+  await robot.Right_attach.run_angle(500,-30)
+  await robot.Drive.straight(50)
   await robot.Drive.turn(-15)
   await robot.Right_attach.run_angle(500,85)
   await robot.Drive.turn(-35)

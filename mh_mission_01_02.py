@@ -16,7 +16,7 @@ async def run_2(robot):#n
     await robot.Drive.straight(675)
     await robot.Drive.turn(-40)
 
-    # Keep the attaahcment in the middle poistion
+    # Keep the attachment in the middle poistion
     await robot.Right_attach.run_angle(500,-80)
 
     #Drives to push and pick up topsoils
