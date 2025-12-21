@@ -27,7 +27,6 @@ from mh_mission_12 import run_1  # Mission Model Mission 12
 from mh_mission_03_13 import run_3  # Mission Model Mission 3 and 13
 #Remote Control
 #from utils.mh_run_remote import run_remote
-#dummy
 #Run Loader Menu
 async def main():
     #full run loader
