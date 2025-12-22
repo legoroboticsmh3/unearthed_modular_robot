@@ -25,6 +25,8 @@ from mh_mission_08_09 import run_7  #Whats on Sale Back Attachment
 from mh_mission_01_02 import run_2 # Map Reveal and Topsoil Pickup
 from mh_mission_12 import run_1  # Mission Model Mission 12
 from mh_mission_03_13 import run_3  # Mission Model Mission 3 and 13
+from mh_mission_11 import run_4  # Mission Model Mission 11
+
 #Remote Control
 #from utils.mh_run_remote import run_remote
 #dummy
@@ -32,6 +34,6 @@ from mh_mission_03_13 import run_3  # Mission Model Mission 3 and 13
 async def main():
     #full run loader
 
-    await multitask(loader(robot,[run_1,run_2,run_3,run_7,run_6, run_5]))                          
+    await multitask(loader(robot,[run_1,run_2,run_3,run_7,run_6, run_5,run_4]))                          
 
 run_task(main())
