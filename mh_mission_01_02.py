@@ -21,7 +21,7 @@ async def run_2(robot):#n
 
     #Drives to push and pick up topsoils
     robot.Drive.settings(straight_speed=200)
-    await robot.Drive.straight(100)
+    await robot.Drive.straight(78)
     await robot.Drive.turn(-5.5)
     await robot.Drive.straight(55)
 
