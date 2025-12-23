@@ -1,4 +1,4 @@
-from pybricks.tools import wait
+from pybricks.tools import wait, multitask
 
 
 #going to the mission model mission 3
@@ -14,7 +14,8 @@ async def run_1(robot):
     #turn towards mission
     await robot.Drive.turn(90)
     #drive to mission
-    await robot.Drive.straight(280)
+    await robot.Drive.straight(280) 
+    await wait(50)
     #bring attatchment down to hook mission
     robot.Right_attach.dc(-75)
     await wait(250)
