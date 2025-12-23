@@ -26,7 +26,7 @@ async def run_2(robot):#n
     await robot.Drive.straight(55)
 
     # #right arm lowers down to grab topsoil and push the topsoil
-    robot.Right_attach.dc(-28)
+    robot.Right_attach.dc(-29)
     await wait(451)
     
     # await robot.Drive.straight(100)
@@ -41,7 +41,7 @@ async def run_2(robot):#n
     await robot.Drive.straight(-230)
     await robot.Drive.turn(-46)
     await robot.Drive.straight(50)
-    await robot.Drive.turn(20)
+    await robot.Drive.turn(10)
     await wait(200)
     #await robot.Drive.drive_power(30)
     robot.L_Motor.dc(65)
@@ -57,7 +57,7 @@ async def run_2(robot):#n
     await robot.Left_attach.run_angle(500,80)
     robot.Left_attach.dc(-100)
     await wait(200)
-    robot.Left_attach.dc(70)
+    robot.Left_attach.dc(40)
     await wait(1000)
     await robot.Drive.straight(-80)
     await robot.Drive.turn(-70)
