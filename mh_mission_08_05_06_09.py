@@ -8,8 +8,8 @@ from pybricks.tools import wait, multitask
 async def run_6(robot):
   print("Starting Run: " + __name__)
 
-  await multitask(robot.Right_attach.run_angle(300, 60), wait(850), race=True)
-  await multitask(robot.Left_attach.run_angle(300, 60), wait(850), race=True)
+  await multitask(robot.Right_attach.run_angle(300, 78), wait(850), race=True)
+  await multitask(robot.Left_attach.run_angle(300, 78), wait(850), race=True)
 
   robot.Drive.settings(straight_speed=250, turn_rate=160)
   await robot.Drive.straight(420)
@@ -68,12 +68,25 @@ async def run_6(robot):
   await robot.Drive.straight(180)
   await robot.Drive.turn(122)
   await robot.Drive.straight(40)
-  await robot.Left_attach.run_angle(500,-190) #Tipping the Scale and grabbing ceiling
-  await wait(600)
+  await robot.Left_attach.run_angle(500,-170) #Tipping the Scale and grabbing ceiling
+  await wait(800)
   await robot.Drive.straight(-210) #Bringing ceiling up
-  await robot.Drive.straight(50)
+  await robot.Drive.straight(80)
   await robot.Left_attach.run_angle(500,60) #Releasing ceiling
   await wait(300)
   await robot.Left_attach.run_angle(500,90) #Releasing ceiling
-  await robot.Drive.straight(-450)
+  await wait(300)
+  await robot.Drive.straight(-20) #Backing up after raising ceiling
+  await robot.Drive.turn(-45) # Turning towards Scale Pan
+  await robot.Drive.straight(80) #Driving to Scale Pan
+  await robot.Drive.turn(30)
+  await robot.Drive.straight(-20)
+  await robot.Left_attach.run_angle(500,-90) #Grabbing Scale Pan
+  await wait(100)
+  await robot.Drive.turn(-30)
+  await robot.Drive.straight(-150) #Bringing Scale Pan up
+  await robot.Drive.turn(-135)
+  await robot.Drive.straight(200) #Driving to home area
 
+  # await robot.Drive.straight(-480)
+  # await robot.Left_attach.run_angle(500,-75)#lift up arm after lifting up the celling
