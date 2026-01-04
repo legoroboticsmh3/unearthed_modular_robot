@@ -45,6 +45,9 @@ async def run_6(robot):
   
   #Completing Who Lives There:
   await robot.Drive.turn(-20) #Setting up to complete Who Lives There
+  await multitask(robot.Right_attach.run_angle(500,-100), wait(700), race=True) #Resetting Wheel Arm
+  await robot.Right_attach.run_angle(500,95) #Picking up arm to lever
+  await wait(200)
   await robot.Drive.straight(50)
   robot.Drive.settings(turn_rate=80)
   await robot.Drive.turn(-30) #Completing Who Lives There

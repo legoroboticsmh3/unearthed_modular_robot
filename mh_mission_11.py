@@ -11,19 +11,19 @@ async def run_4(robot):
     await robot.Drive.straight(275) #was -315
     #await robot.Right_attach.run_angle(180, -55)
         
-    await robot.Drive.turn(90) # Tur
+    await robot.Drive.turn(90) # Turn
     print("Starting Run: n and go to mission 11")
-    await robot.Drive.straight((-700+robot_correction_magic_number))
+    await robot.Drive.straight((-690+robot_correction_magic_number))
     await robot.Drive.turn(90)
 
-    await robot.Drive.straight((65+robot_correction_magic_number)) # Go towards mission 11 originally 158
-    await robot.Drive.turn(-22)
-    await robot.Left_attach.run_angle(500, -1600) # Turn the lever.
+    await robot.Drive.straight((55+robot_correction_magic_number)) # Go towards mission 11
+    await robot.Drive.turn(-10) # turn to lock gears with mission
+    await robot.Left_attach.run_angle(500, 1600) # Turn the gear to pick up artifct
 
-    await robot.Drive.turn(25) #  originally 35
-    await robot.Drive.straight(-220) #  originally 180
-    await robot.Drive.turn(-140)
-    await robot.Drive.straight(-800)
+    await robot.Drive.turn(25) #  turn to unlock the gears 
+    await robot.Drive.straight(-200) #  driving back from mission to prepare to go back to base
+    await robot.Drive.turn(65) #alligning to red base
+    await robot.Drive.straight(800)# driving back to red base
 
     # # Move back towards Mission 10
     # await robot.Drive.turn(35)
