@@ -12,22 +12,30 @@ async def run_2(robot):#n
     robot.Right_attach.stop()
     robot.Left_attach.stop()
 
-    #Drives to mission 2 area
-    await robot.Drive.straight(675)
-    await robot.Drive.turn(-40)
 
-    # Keep the attachment in the middle poistion
-    await robot.Right_attach.run_angle(500,-80)
+    await robot.Drive.straight(680) #drving straight to mission 2 
+    await robot.Drive.turn(-38) #turning to line up with misssion 2 
 
-    #Drives to push and pick up topsoils
-    robot.Drive.settings(straight_speed=200)
-    await robot.Drive.straight(78)
-    await robot.Drive.turn(-5.5)
-    await robot.Drive.straight(55)
 
-    # #right arm lowers down to grab topsoil and push the topsoil
-    robot.Right_attach.dc(-29)
-    await wait(451)
+    await robot.Right_attach.run_angle(500,-180) 
+    await wait(200) #waiting for the attachment to move
+
+    
+    robot.Drive.settings(straight_speed=200) #setting the speed of driving straight 
+    #await robot.Drive.turn(-5)  #
+    #await robot.Drive.straight(5)
+    #await robot.Drive.turn(-0.5)  #
+    #await robot.Drive.straight(73)       #
+    await robot.Drive.straight(170)
+    await wait(200)
+    #await robot.Drive.turn(-5.5)
+    #await robot.Drive.straight(17)
+    #await robot.Drive.turn(.5)
+    #await robot.Drive.turn(-20)
+
+
+    robot.Right_attach.dc(-40) #right arm lowers down to grab topsoil and push the topsoil
+    await wait(451) #
     
     # await robot.Drive.straight(100)
     await multitask(robot.Drive.straight(100),wait(700), race=True)
@@ -35,12 +43,14 @@ async def run_2(robot):#n
 
 
     #Picks up topsoil
-    await robot.Right_attach.run_angle(500,120) 
+    await robot.Right_attach.run_angle(500,10) 
+    await robot.Drive.straight(-15)
+    await robot.Right_attach.run_angle(500,150) 
     
-    await robot.Drive.turn(-10)
-    await robot.Drive.straight(-230)
+    await robot.Drive.turn(-10) 
+    await robot.Drive.straight(-240) 
     await robot.Drive.turn(-46)
-    await robot.Drive.straight(50)
+    await robot.Drive.straight(40)
     await robot.Drive.turn(10)
     await wait(200)
     #await robot.Drive.drive_power(30)
