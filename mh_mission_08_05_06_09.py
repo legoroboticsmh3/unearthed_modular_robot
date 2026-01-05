@@ -29,67 +29,49 @@ async def run_6(robot):
   robot.Drive.settings(straight_speed=300)
 
 
-  #Completing the Forge:
-  #Going to the Forge
+  #Completing the Forge and who lived here
   await robot.Drive.turn(-45)
-  await robot.Drive.straight(50)
+  await robot.Drive.straight(150)
   await robot.Drive.turn(45)
-  await robot.Drive.straight(220) #reach the Boulder station
-  await robot.Drive.turn(-6)
-  await robot.Drive.straight(16)
-  await robot.Right_attach.run_angle(500, 30)
-  await robot.Right_attach.run_angle(500,-120) #Complete the Forge
-  await robot.Right_attach.run_angle(500,100)
-  await robot.Right_attach.run_angle(500,-100)
+  await robot.Drive.straight(200) #reach the Boulder station
+  await robot.Right_attach.run_angle(500,-150) #hammer down
+  await robot.Drive.turn(30)#turming to complete the forge
+  await multitask(robot.Drive.turn(-57), wait(800), race=True)#turning to complete who lived here)
   await wait(500)
-  
-  #Completing Who Lives There:
-  await robot.Drive.turn(-20) #Setting up to complete Who Lives There
-  await multitask(robot.Right_attach.run_angle(500,-100), wait(700), race=True) #Resetting Wheel Arm
-  await robot.Right_attach.run_angle(500,95) #Picking up arm to lever
-  await wait(200)
-  await robot.Drive.straight(50)
-  robot.Drive.settings(turn_rate=80)
-  await robot.Drive.turn(-30) #Completing Who Lives There
-  await multitask(robot.Drive.straight(10), wait(700), race=True)
-  await robot.Drive.turn(10)
-  robot.Drive.settings(turn_rate=160)
-  await robot.Drive.straight(-50)
-  await robot.Right_attach.run_angle(500, 90)
-  await robot.Drive.turn(-95)
 
-  #Raising the Market Wares:
-  await robot.Drive.straight(130) #Heading to What's on Sale
-  await robot.Right_attach.run_angle(500,-180)
-  await wait(500)
-  await robot.Drive.straight(60) #Completing the market ware
+  #Raising Market Wares:
+  await robot.Drive.straight(-100)#come back from the who lived here
+  await robot.Right_attach.run_angle(500,150)#hammer up
+  await robot.Drive.turn(-110)#turning to face the market wares
+  await robot.Drive.straight(40)#going to the market wares
+  await robot.Right_attach.run_angle(500,-170) #slam hammer into market waresssss
+  await wait(300)
+  await robot.Drive.straight(40) #Moving forward to raise market wares
 
   #Tip the Scales and Rasing Ceiling:
-  await robot.Right_attach.run_angle(500,180)
-  await robot.Drive.straight(-80)
+  await robot.Right_attach.run_angle(500,180) #lifting up hammmer from market wares
+  await robot.Drive.straight(-70) #backing up from market wares
   await robot.Drive.turn(-25)
-  await robot.Drive.straight(180)
+  await robot.Drive.straight(230)
   await robot.Drive.turn(122)
-  await robot.Drive.straight(40)
-  await robot.Left_attach.run_angle(500,-170) #Tipping the Scale and grabbing ceiling
+  await robot.Drive.straight(90)
+  await robot.Left_attach.run_angle(500,-190) #Slamming Tipping the Scale and grabbing ceiling
   await wait(800)
   await robot.Drive.straight(-210) #Bringing ceiling up
   await robot.Drive.straight(80)
-  await robot.Left_attach.run_angle(500,60) #Releasing ceiling
+  await robot.Left_attach.run_angle(150,60) #Releasing ceiling
   await wait(300)
-  await robot.Left_attach.run_angle(500,90) #Releasing ceiling
+  await robot.Left_attach.run_angle(150,90) #Releasing ceiling
   await wait(300)
   await robot.Drive.straight(-20) #Backing up after raising ceiling
   await robot.Drive.turn(-45) # Turning towards Scale Pan
   await robot.Drive.straight(80) #Driving to Scale Pan
-  await robot.Drive.turn(30)
-  await robot.Drive.straight(-20)
-  await robot.Left_attach.run_angle(500,-90) #Grabbing Scale Pan
-  await wait(100)
+  await robot.Drive.turn(22)
+  await robot.Drive.straight(-21)
+  await robot.Left_attach.run_angle(500,-150) #Grabbing Scale Pan
+  await wait(300)
   await robot.Drive.turn(-30)
-  await robot.Drive.straight(-150) #Bringing Scale Pan up
-  await robot.Drive.turn(-135)
-  await robot.Drive.straight(200) #Driving to home area
-
-  # await robot.Drive.straight(-480)
-  # await robot.Left_attach.run_angle(500,-75)#lift up arm after lifting up the celling
+  await robot.Drive.straight(-400) #Bringing Scale Pan home
+  await robot.Drive.turn(-80)#going to home area
+  await robot.Left_attach.run_angle(300,150) #Releasing Scale Pan
+  await robot.Drive.straight(100)
