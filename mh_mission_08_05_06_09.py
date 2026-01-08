@@ -2,6 +2,7 @@ from pybricks.tools import wait, multitask
 
 
 #Completing missions 5 and 6 in one motion
+###WORKING VERSION, DO NOT CHANGE UNLESS YOU KNOW WHAT YOU ARE DOING.
 
 
 
@@ -66,7 +67,7 @@ async def run_6(robot):
   await robot.Drive.straight(-20) #Backing up after raising ceiling
   await robot.Drive.turn(-45) # Turning towards Scale Pan
   await robot.Drive.straight(80) #Driving to Scale Pan
-  await robot.Drive.turn(22)
+  await robot.Drive.turn(15)
   await robot.Drive.straight(-21)
   await robot.Left_attach.run_angle(500,-150) #Grabbing Scale Pan
   await wait(300)
