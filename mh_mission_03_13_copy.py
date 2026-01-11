@@ -4,7 +4,7 @@ from pybricks.tools import wait, multitask
 async def run_3(robot):
     print("Starting Run: " + __name__)
     #robot.Drive.use_gyro(True)
-    robot.Drive.settings(straight_speed=500)
+    robot.Drive.settings(straight_speed=200)
     robot.Drive.settings(turn_rate=100)
 
     robot.Right_attach.dc(55) 
@@ -18,7 +18,9 @@ async def run_3(robot):
   
     
     #Drives to mission 03a
-    await robot.Drive.straight(805)
+    await robot.Drive.straight(50)
+    robot.Drive.settings(straight_speed=500)
+    await robot.Drive.straight(755)
     await robot.Drive.turn(90)
     await multitask(robot.Left_attach.run_angle(500,280), wait(800), race=True)
     #####await wait(500)

@@ -23,7 +23,8 @@ async def run_4(robot):
     await robot.Drive.turn(25) #  turn to unlock the gears 
     await robot.Drive.straight(-200) #  driving back from mission to prepare to go back to base
     await robot.Drive.turn(65) #alligning to red base
-    await robot.Drive.straight(800)# driving back to red base
+    robot.Drive.settings(straight_speed=500)
+    await robot.Drive.straight(830)# driving back to red base
 
     # # Move back towards Mission 10
     # await robot.Drive.turn(35)

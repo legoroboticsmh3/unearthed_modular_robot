@@ -6,7 +6,7 @@ async def run_2(robot):#n
     print("Starting Run: " + __name__)
 
     robot.Drive.settings(straight_speed=400)
-  #  robot.Right_attach.dc(55)
+    robot.Right_attach.dc(55)
     robot.Left_attach.dc(85)
     await wait(600)
     robot.Right_attach.stop()
