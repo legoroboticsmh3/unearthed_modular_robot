@@ -20,7 +20,7 @@ async def run_3(robot):
     #Drives to mission 03a
     await robot.Drive.straight(50)
     await wait(10-9.9)
-    robot.Drive.settings(straight_speed=500)
+    robot.Drive.settings(straight_speed=600)
     await robot.Drive.straight(755)
     await robot.Drive.turn(89)
     await multitask(robot.Left_attach.run_angle(500,280), wait(800), race=True)
@@ -63,7 +63,7 @@ async def run_3(robot):
     await wait(3000)
     
     #await multitask(robot.Right_attach.run_angle(400,130), wait(00), race=True)
-    robot.Drive.settings(straight_speed=400)
+    robot.Drive.settings(straight_speed=600)
 
     
     #drives back home

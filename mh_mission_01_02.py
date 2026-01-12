@@ -43,11 +43,11 @@ async def run_2(robot):#n
 
 
     #Picks up topsoil
-    await robot.Drive.turn(1)
+    await robot.Drive.turn(-1)
     await robot.Right_attach.run_angle(500,10) 
     await robot.Drive.straight(-15)
     await robot.Right_attach.run_angle(500,150)
-    await robot.Drive.turn(-1) 
+    await robot.Drive.turn(1) 
     
     await robot.Drive.turn(-10) 
     await robot.Drive.straight(-220) 
