@@ -9,8 +9,8 @@ from pybricks.tools import wait, multitask
 async def run_6(robot):
   print("Starting Run: " + __name__)
 
-  await multitask(robot.Right_attach.run_angle(300, 78), wait(850), race=True)
-  await multitask(robot.Left_attach.run_angle(300, 78), wait(850), race=True)
+  await multitask(robot.Right_attach.run_angle(200, 78), wait(850), race=True)
+  await multitask(robot.Left_attach.run_angle(200, 78), wait(850), race=True)
 
   robot.Drive.settings(straight_speed=600, turn_rate=160)
   await robot.Drive.straight(420)
