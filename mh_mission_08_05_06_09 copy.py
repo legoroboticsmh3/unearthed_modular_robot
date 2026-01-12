@@ -11,9 +11,13 @@ async def run_6(robot):
 
   await multitask(robot.Right_attach.run_angle(300, 78), wait(850), race=True)
   await multitask(robot.Left_attach.run_angle(300, 78), wait(850), race=True)
-
-  robot.Drive.settings(straight_speed=250, turn_rate=160)
+  
+  print("Raghu")
+  print(robot.Drive.settings())
+  robot.Drive.settings(straight_speed=1000, turn_rate=160)
+  print(robot.Drive.settings())
   await robot.Drive.straight(420)
+  robot.Drive.settings(straight_speed=500)
   
   #Completing Silo
   print(robot.gyro.heading())
@@ -27,7 +31,6 @@ async def run_6(robot):
   await robot.Right_attach.run_angle(500,155) #hammer up
   #await robot.Right_attach.run_angle(500,-100) #hammer down 4th time
   #await robot.Right_attach.run_angle(500,85) #hammer up
-  robot.Drive.settings(straight_speed=300)
 
 
   #Completing the Forge:
@@ -90,7 +93,9 @@ async def run_6(robot):
   await robot.Drive.turn(-30)
   await robot.Drive.straight(-150) #Bringing Scale Pan up
   await robot.Drive.turn(-135)
+  robot.Drive.settings(straight_speed=2000)
   await robot.Drive.straight(200) #Driving to home area
+  robot.Drive.settings(straight_speed=500)
 
   # await robot.Drive.straight(-480)
   # await robot.Left_attach.run_angle(500,-75)#lift up arm after lifting up the celling

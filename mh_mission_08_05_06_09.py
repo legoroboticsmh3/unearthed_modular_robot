@@ -12,12 +12,12 @@ async def run_6(robot):
   await multitask(robot.Right_attach.run_angle(300, 78), wait(850), race=True)
   await multitask(robot.Left_attach.run_angle(300, 78), wait(850), race=True)
 
-  robot.Drive.settings(straight_speed=250, turn_rate=160)
+  robot.Drive.settings(straight_speed=600, turn_rate=160)
   await robot.Drive.straight(420)
   
   #Completing Silo
   print(robot.gyro.heading())
-  await robot.Right_attach.run_angle(500, -200) #hammer down
+  await robot.Right_attach.run_angle(150, -200) #hammer down
   await robot.Right_attach.run_angle(500,130) #hammer  up
   
   await robot.Right_attach.run_angle(500,-130) #hammer down
@@ -38,14 +38,13 @@ async def run_6(robot):
   await robot.Right_attach.run_angle(500,-150) #hammer down
   await robot.Drive.turn(30)#turming to complete the forge
   await multitask(robot.Drive.turn(-57), wait(800), race=True)#turning to complete who lived here)
-  await wait(500)
 
   #Raising Market Wares:
-  await robot.Drive.straight(-100)#come back from the who lived here
+  await robot.Drive.straight(-105)#come back from the who lived here
   await robot.Right_attach.run_angle(500,150)#hammer up
   await robot.Drive.turn(-110)#turning to face the market wares
-  await robot.Drive.straight(40)#going to the market wares
-  await robot.Right_attach.run_angle(500,-170) #slam hammer into market waresssss
+  await robot.Drive.straight(43)#going to the market wares
+  await robot.Right_attach.run_angle(250,-170) #place hammer into market waresssss
   await wait(300)
   await robot.Drive.straight(40) #Moving forward to raise market wares
 
@@ -53,26 +52,27 @@ async def run_6(robot):
   await robot.Right_attach.run_angle(500,180) #lifting up hammmer from market wares
   await robot.Drive.straight(-70) #backing up from market wares
   await robot.Drive.turn(-25)
-  await robot.Drive.straight(230)
+  await robot.Drive.straight(210)
   await robot.Drive.turn(122)
   await robot.Drive.straight(90)
   await robot.Left_attach.run_angle(500,-190) #Slamming Tipping the Scale and grabbing ceiling
-  await wait(800)
+  await wait(300)
   await robot.Drive.straight(-210) #Bringing ceiling up
   await robot.Drive.straight(80)
-  await robot.Left_attach.run_angle(150,60) #Releasing ceiling
-  await wait(300)
-  await robot.Left_attach.run_angle(150,90) #Releasing ceiling
-  await wait(300)
+  await robot.Left_attach.run_angle(150,150) #Releasing ceiling It was 60
+  # await wait(300)
+  # await robot.Left_attach.run_angle(150,90) #Releasing ceiling
+  # await wait(300)
   await robot.Drive.straight(-20) #Backing up after raising ceiling
   await robot.Drive.turn(-45) # Turning towards Scale Pan
   await robot.Drive.straight(80) #Driving to Scale Pan
-  await robot.Drive.turn(15)
+  await robot.Drive.turn(17) #Turning towards Scale Pan
   await robot.Drive.straight(-21)
-  await robot.Left_attach.run_angle(500,-150) #Grabbing Scale Pan
+  await robot.Left_attach.run_angle(250,-150) #Grabbing Scale Pan
   await wait(300)
   await robot.Drive.turn(-30)
   await robot.Drive.straight(-400) #Bringing Scale Pan home
   await robot.Drive.turn(-80)#going to home area
-  await robot.Left_attach.run_angle(300,150) #Releasing Scale Pan
-  await robot.Drive.straight(100)
+  await robot.Left_attach.run_angle(500,250) #Releasing Scale Pan
+  await robot.Drive.straight(200)
+  robot.Drive.settings(straight_speed=250, turn_rate=160) # Reset the straight_speed back.
