@@ -15,7 +15,7 @@ async def run_5(robot):
     await robot.Drive.turn(30)
     #await robot.Drive.straight(-40)  
     await robot.Drive.straight(40)    #reach heavy lifting
-    await robot.Right_attach.run_angle(150,-140)
+    await robot.Right_attach.run_angle(150,-150)
     await wait(900)
     robot.Drive.settings(straight_speed=200)
     await robot.Drive.straight(20) #couple with the ring of the mill
