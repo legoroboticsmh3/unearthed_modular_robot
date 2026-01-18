@@ -34,6 +34,6 @@ from mh_mission_04 import run_8
 async def main():
     #full run loader
 
-    await multitask(loader(robot,[run_1,run_2,run_3,run_7,run_6, run_5,run_4]))                          
+    await multitask(loader(robot,[run_6, run_5,run_4, run_1,run_2,run_3,run_7]))                          
 
 run_task(main())

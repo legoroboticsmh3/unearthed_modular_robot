@@ -37,7 +37,7 @@ async def run_6(robot):
   await robot.Drive.straight(200) #reach the Boulder station
   await robot.Right_attach.run_angle(500,-150) #hammer down
   await robot.Drive.turn(30)#turming to complete the forge
-  await multitask(robot.Drive.turn(-57), wait(800), race=True)#turning to complete who lived here)
+  await multitask(robot.Drive.turn(-60), wait(1800), race=True)#turning to complete who lived here)
 
   #Raising Market Wares:
   await robot.Drive.straight(-105)#come back from the who lived here
