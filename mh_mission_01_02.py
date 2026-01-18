@@ -2,10 +2,10 @@ from pybricks.tools import wait,multitask
 
 
 #Shows mission 2
-async def run_2(robot):#n
+async def run_2(robot):
     print("Starting Run: " + __name__)
 
-    robot.Drive.settings(straight_speed=400)
+    robot.Drive.settings(straight_speed=600)
     robot.Right_attach.dc(55)
     robot.Left_attach.dc(85)
     await wait(600)
@@ -13,8 +13,8 @@ async def run_2(robot):#n
     robot.Left_attach.stop()
 
 
-    await robot.Drive.straight(680) #drving straight to mission 2 
-    await robot.Drive.turn(-38) #turning to line up with misssion 2 
+    await robot.Drive.straight(690) #drving straight to mission 2 
+    await robot.Drive.turn(-39) #turning to line up with misssion 2 
 
 
     await robot.Right_attach.run_angle(500,-180) 
@@ -22,17 +22,8 @@ async def run_2(robot):#n
 
     
     robot.Drive.settings(straight_speed=200) #setting the speed of driving straight 
-    #await robot.Drive.turn(-5)  #
-    #await robot.Drive.straight(5)
-    #await robot.Drive.turn(-0.5)  #
-    #await robot.Drive.straight(73)       #
     await robot.Drive.straight(170)
     await wait(200)
-    #await robot.Drive.turn(-5.5)
-    #await robot.Drive.straight(17)
-    #await robot.Drive.turn(.5)
-    #await robot.Drive.turn(-20)
-
 
     robot.Right_attach.dc(-40) #right arm lowers down to grab topsoil and push the topsoil
     await wait(451) #
@@ -43,11 +34,12 @@ async def run_2(robot):#n
 
 
     #Picks up topsoil
-    await robot.Drive.turn(-1)
-    await robot.Right_attach.run_angle(500,10) 
-    await robot.Drive.straight(-15)
-    await robot.Right_attach.run_angle(500,150)
-    await robot.Drive.turn(1) 
+    await robot.Drive.turn(-7)# was -4
+    await robot.Drive.straight(-50)#was -10
+    #await robot.Right_attach.run_angle(500,10) 
+    #await robot.Drive.straight(-20)
+    await robot.Right_attach.run_angle(100,250)
+    await robot.Drive.turn(7) #was 4
     
     await robot.Drive.turn(-10) 
     await robot.Drive.straight(-220) 
@@ -64,16 +56,18 @@ async def run_2(robot):#n
     await wait(300)
     robot.L_Motor.stop()
 
+    #mission_02 to tap twice for surface brushing
     robot.Left_attach.dc(-100)
     await wait(200)
-    await robot.Left_attach.run_angle(500,80)
+    robot.Left_attach.dc(100)
+    await wait(200)
     robot.Left_attach.dc(-100)
     await wait(200)
-    robot.Left_attach.dc(40)
-    await wait(1000)
+    robot.Left_attach.dc(100)
+    await wait(200)
+    #robot.Left_attach.dc(-100)
+    #await wait(200)
     await robot.Drive.straight(-80)
     await robot.Drive.turn(-70)
-    #robot.Drive.settings(straight_speed=1000)
+    robot.Drive.settings(straight_speed=600)
     await robot.Drive.straight(450)    
-    
-
