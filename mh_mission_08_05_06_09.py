@@ -42,7 +42,7 @@ async def run_6(robot):
   #Raising Market Wares:
   await robot.Drive.straight(-105)#come back from the who lived here
   await robot.Right_attach.run_angle(500,150)#hammer up
-  await robot.Drive.turn(-110)#turning to face the market wares
+  await robot.Drive.turn(-105)#turning to face the market wares
   await robot.Drive.straight(43)#going to the market wares
   await robot.Right_attach.run_angle(250,-170) #place hammer into market waresssss
   await wait(300)
@@ -56,7 +56,7 @@ async def run_6(robot):
   await robot.Drive.turn(122)
   await robot.Drive.straight(90)
   await robot.Left_attach.run_angle(500,-190) #Slamming Tipping the Scale and grabbing ceiling
-  await wait(300)
+  await wait(306)
   await robot.Drive.straight(-210) #Bringing ceiling up
   await robot.Drive.straight(80)
   await robot.Left_attach.run_angle(150,150) #Releasing ceiling It was 60
