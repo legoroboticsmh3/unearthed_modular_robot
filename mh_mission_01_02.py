@@ -5,7 +5,7 @@ from pybricks.tools import wait,multitask
 async def run_2(robot):
     print("Starting Run: " + __name__)
 
-    robot.Drive.settings(straight_speed=600)
+    robot.Drive.settings(straight_speed=400)
     robot.Right_attach.dc(55)
     robot.Left_attach.dc(85)
     await wait(600)
@@ -13,7 +13,7 @@ async def run_2(robot):
     robot.Left_attach.stop()
 
 
-    await robot.Drive.straight(690) #drving straight to mission 2 
+    await robot.Drive.straight(705) #drving straight to mission 2 #was 700
     await robot.Drive.turn(-39) #turning to line up with misssion 2 
 
 
@@ -22,14 +22,14 @@ async def run_2(robot):
 
     
     robot.Drive.settings(straight_speed=200) #setting the speed of driving straight 
-    await robot.Drive.straight(170)
+    await robot.Drive.straight(130)
     await wait(200)
 
     robot.Right_attach.dc(-40) #right arm lowers down to grab topsoil and push the topsoil
     await wait(451) #
     
     # await robot.Drive.straight(100)
-    await multitask(robot.Drive.straight(100),wait(700), race=True)
+    await multitask(robot.Drive.straight(140),wait(700), race=True)
     robot.Drive.stop()
 
 
@@ -42,7 +42,7 @@ async def run_2(robot):
     await robot.Drive.turn(7) #was 4
     
     await robot.Drive.turn(-10) 
-    await robot.Drive.straight(-220) 
+    await robot.Drive.straight(-205) 
     await robot.Drive.turn(-46)
     await robot.Drive.straight(40)
     await robot.Drive.turn(10)
@@ -65,6 +65,7 @@ async def run_2(robot):
     await wait(200)
     robot.Left_attach.dc(100)
     await wait(200)
+    robot.Left_attach.stop()
     #robot.Left_attach.dc(-100)
     #await wait(200)
     await robot.Drive.straight(-80)
