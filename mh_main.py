@@ -24,7 +24,7 @@ from mh_mission_08_05_06_09 import run_6  #Boulder and Who Lives There
 from mh_mission_08_09 import run_7  #Whats on Sale Back Attachment
 from mh_mission_01_02 import run_2 # Map Reveal and Topsoil Pickup
 from mh_mission_12 import run_1  # Mission Model Mission 12
-from mh_mission_03_13_copy import run_3  # Mission Model Mission 3 and 13
+from mh_mission_03_13 import run_3  # Mission Model Mission 3 and 13
 from mh_mission_11 import run_4 
 from mh_mission_04 import run_8
 

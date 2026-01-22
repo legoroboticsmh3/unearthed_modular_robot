@@ -5,7 +5,7 @@ from pybricks.tools import wait,multitask
 async def run_2(robot):
     print("Starting Run: " + __name__)
 
-    robot.Drive.settings(straight_speed=400)
+    robot.Drive.settings(straight_speed=600) #CHANGE BACK TO 600
     robot.Right_attach.dc(55)
     robot.Left_attach.dc(85)
     await wait(600)
@@ -14,7 +14,7 @@ async def run_2(robot):
 
 
     await robot.Drive.straight(705) #drving straight to mission 2 #was 700
-    await robot.Drive.turn(-39) #turning to line up with misssion 2 
+    await robot.Drive.turn(-43) #turning to line up with misssion 2 
 
 
     await robot.Right_attach.run_angle(500,-180) 
@@ -22,27 +22,24 @@ async def run_2(robot):
 
     
     robot.Drive.settings(straight_speed=200) #setting the speed of driving straight 
-    await robot.Drive.straight(130)
+    await robot.Drive.straight(150) #driving into topsoil
     await wait(200)
 
     robot.Right_attach.dc(-40) #right arm lowers down to grab topsoil and push the topsoil
-    await wait(451) #
+    await wait(451) 
     
-    # await robot.Drive.straight(100)
-    await multitask(robot.Drive.straight(140),wait(700), race=True)
+    await multitask(robot.Drive.straight(140),wait(700), race=True) #driving forward while pushing topsoil
     robot.Drive.stop()
 
 
     #Picks up topsoil
-    await robot.Drive.turn(-7)# was -4
-    await robot.Drive.straight(-50)#was -10
-    #await robot.Right_attach.run_angle(500,10) 
-    #await robot.Drive.straight(-20)
-    await robot.Right_attach.run_angle(100,250)
+    await robot.Drive.turn(-7)# turning to not get stuck on surface brushing while backing up
+    await robot.Drive.straight(-50) #driving backwards to get to surface brushing
+    await robot.Right_attach.run_angle(100,250) #picking up topsoil
     await robot.Drive.turn(7) #was 4
     
     await robot.Drive.turn(-10) 
-    await robot.Drive.straight(-205) 
+    await robot.Drive.straight(-200) 
     await robot.Drive.turn(-46)
     await robot.Drive.straight(40)
     await robot.Drive.turn(10)
