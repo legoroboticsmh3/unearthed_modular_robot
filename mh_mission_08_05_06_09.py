@@ -9,6 +9,7 @@ from pybricks.tools import wait, multitask
 async def run_6(robot):
   print("Starting Run: " + __name__)
 
+  robot.Drive.use_gyro(True)
   await multitask(robot.Right_attach.run_angle(300, 78), wait(300), race=True)
   await multitask(robot.Left_attach.run_angle(300, 78), wait(300), race=True)
 
@@ -17,7 +18,8 @@ async def run_6(robot):
   
   #Completing Silo
   print(robot.gyro.heading())
-  await robot.Right_attach.run_angle(150, -200) #hammer down
+  
+  await multitask(robot.Right_attach.run_angle(200, -250), wait(800), race=True) #hammer down
   await robot.Right_attach.run_angle(500,130) #hammer  up
   
   await robot.Right_attach.run_angle(500,-130) #hammer down
@@ -42,7 +44,7 @@ async def run_6(robot):
   #Raising Market Wares:
   await robot.Drive.straight(-105)#come back from the who lived here
   await robot.Right_attach.run_angle(500,150)#hammer up
-  await robot.Drive.turn(-105)#turning to face the market wares
+  await robot.Drive.turn(-108)#turning to face the market wares
   await robot.Drive.straight(43)#going to the market wares
   await robot.Right_attach.run_angle(250,-170) #place hammer into market waresssss
   await wait(300)
@@ -55,8 +57,8 @@ async def run_6(robot):
   await robot.Drive.straight(210)
   await robot.Drive.turn(122)
   await robot.Drive.straight(90)
-  await robot.Left_attach.run_angle(500,-190) #Slamming Tipping the Scale and grabbing ceiling
-  await wait(306)
+  await robot.Left_attach.run_angle(500,-210) #Slamming Tipping the Scale and grabbing ceiling
+  await wait(300)
   await robot.Drive.straight(-210) #Bringing ceiling up
   await robot.Drive.straight(80)
   await robot.Left_attach.run_angle(150,150) #Releasing ceiling It was 60

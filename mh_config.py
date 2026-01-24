@@ -32,3 +32,34 @@ CONFIG = {
     },
 }
 
+'''
+P – Proportional: “How big is the error right now?”
+
+Big error → big push.
+
+Small error → small push.
+
+This makes the robot respond quickly, but if P is too big, it overshoots and wiggles past the target.
+
+I – Integral: “Have we been wrong for a long time?”
+
+If the robot is always a little off (like it always stops just short), I slowly adds more push to fix that “stuck” error.
+
+Too much I can make the robot start to swing back and forth.
+
+D – Derivative: “Where is the error heading?”
+
+D watches how fast the error is changing.
+
+If you’re racing toward the target, D says “Slow down, you’re coming in too hot!”
+
+This helps reduce overshoot and makes motion smoother.
+
+The controller adds these three parts together to decide the motor power:
+
+P = react to the now
+
+I = remember the past
+
+D = predict the future
+'''

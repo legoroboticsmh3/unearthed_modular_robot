@@ -14,7 +14,7 @@ async def run_2(robot):
 
 
     await robot.Drive.straight(705) #drving straight to mission 2 #was 700
-    await robot.Drive.turn(-45) #turning to line up with misssion 2 
+    await robot.Drive.turn(-43) #turning to line up with misssion 2 
 
 
     await robot.Right_attach.run_angle(500,-180) 
@@ -33,13 +33,12 @@ async def run_2(robot):
 
 
     #Picks up topsoil
-    #await robot.Drive.turn(-7)# turning to not get stuck on surface brushing while backing up
-    await robot.Right_attach.run_angle(100,50)
-    await robot.Drive.straight(-60) #driving backwards to get to surface brushing
-    await robot.Right_attach.run_angle(100,200) #picking up topsoil
-    #await robot.Drive.turn(7)
+    await robot.Drive.turn(-7)# turning to not get stuck on surface brushing while backing up
+    await robot.Drive.straight(-50) #driving backwards to get to surface brushing
+    await robot.Right_attach.run_angle(100,250) #picking up topsoil
+    await robot.Drive.turn(7)
     
-    await robot.Drive.turn(-12) 
+    await robot.Drive.turn(-10) 
     await robot.Drive.straight(-200) 
     await robot.Drive.turn(-46)
     await robot.Drive.straight(40)
@@ -60,8 +59,7 @@ async def run_2(robot):
     await robot.Left_attach.run_angle(500,200)
     robot.Left_attach.dc(-100)
     await wait(200)
-    # await robot.Left_attach.run_angle(500,200)
-    await multitask(robot.Left_attach.run_angle(500,200), wait(1000), race=True)
+    await robot.Left_attach.run_angle(500,200)
     robot.Left_attach.stop()
     #robot.Left_attach.dc(-100)
     #await wait(200)

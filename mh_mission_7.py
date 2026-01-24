@@ -27,7 +27,7 @@ async def run_5(robot):
     await robot.Drive.straight(-80) #come out of the area
     await robot.Drive.turn(-50)#turn towards blue base
     robot.Drive.settings(turn_rate=160)
-    await robot.Drive.straight(-780) #going to blue base
+    await robot.Drive.straight(-800) #going to blue base
     
 
 #####Below is the original code for mission 7 heavy lifting with the originl starting alignment of 7T"
