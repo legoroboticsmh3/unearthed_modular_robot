@@ -56,7 +56,7 @@ async def run_6(robot):
   await robot.Drive.straight(-70) #backing up from market wares
   await robot.Drive.turn(-25)
   await robot.Drive.straight(210)
-  await robot.Drive.turn(122)
+  await robot.Drive.turn(125)
   await robot.Drive.straight(90)
   await robot.Left_attach.run_angle(500,-210) #Slamming Tipping the Scale and grabbing ceiling
   await wait(300)
