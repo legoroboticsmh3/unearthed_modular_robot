@@ -19,17 +19,17 @@ async def run_3(robot):
   
     
     #Drives to mission 03a
-    await robot.Drive.straight(50)
+   # await robot.Drive.straight(50)
     robot.Drive.settings(straight_speed=600)
-    await robot.Drive.straight(755)
+    await robot.Drive.straight(805)
     await robot.Drive.turn(89)
-    await multitask(robot.Left_attach.run_angle(500,280), wait(1500), race=True)
+    await multitask(robot.Left_attach.run_angle(500,350), wait(1500), race=True)
    
 
     #Drives and get ready position to lift the missions 03 
     #await robot.Left_attach.run_angle(100,20)
     #await wait(100)
-    await robot.Drive.straight(130)
+    await robot.Drive.straight(120)
     await robot.Left_attach.run_angle(170,-220) # was (600-520) for speed
     await wait(800)
     await robot.Left_attach.run_angle(300,-40) #was (800-500) for speed
@@ -53,13 +53,13 @@ async def run_3(robot):
     await robot.Drive.straight(10)
     robot.Drive.settings(straight_speed=300)
     #Adjust
-    await robot.Drive.turn(22)
+    await robot.Drive.turn(23) # WAS 22
     await wait(100)
     await multitask(robot.Right_attach.run_angle(500,-580), wait(1000), race=True)
-    await robot.Drive.straight(182)
+    await robot.Drive.straight(202)
 
     #lifts up mission 13t
-    await multitask(robot.Right_attach.run_angle(400,232), wait(800), race=True)
+    await multitask(robot.Right_attach.run_angle(400,330), wait(800), race=True)
     
     #await multitask(robot.Right_attach.run_angle(400,130), wait(00), race=True)
     robot.Drive.settings(straight_speed=600)
