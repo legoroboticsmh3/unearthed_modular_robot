@@ -16,13 +16,14 @@ async def run_5(robot):
     await robot.Drive.turn(51) #face heavy lifting
     #await robot.Drive.straight(-40)  
     await robot.Drive.straight(60)    #reach heavy lifting
-    await robot.Right_attach.run_angle(150,-150) #placing attachment down to pick up the heavy lifting
+    await robot.Right_attach.run_angle(150,-180) #placing attachment down to pick up the heavy lifting
     await wait(900)
     robot.Drive.settings(straight_speed=200)
     await robot.Drive.straight(50) #couple with the ring of the mill
     await wait(300)
-    await robot.Right_attach.run_angle(200,150) #pick up the weight
-    await wait(200)
+    #await robot.Right_attach.run_angle(200,150) #pick up the weight
+    robot.Right_attach.dc(100)
+    await wait(2000)
     robot.Drive.settings(straight_speed=600)
     await robot.Drive.straight(-80) #come out of the area
     await robot.Drive.turn(-50)#turn towards blue base
