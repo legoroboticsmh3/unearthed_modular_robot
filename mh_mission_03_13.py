@@ -26,14 +26,14 @@ async def run_3(robot):
 
 
     #Drives to mission 13t
-    await robot.Drive.straight(-30)
-    robot.Drive.settings(straight_speed=300)
+    # await robot.Drive.straight(-30)
+    robot.Drive.settings(straight_speed=600)
+    await robot.Left_attach.run_angle(300,100)
     
     #Adjust
-    await robot.Drive.turn(28) # WAS 22
-    await robot.Left_attach.run_angle(300,100)
+    await robot.Drive.turn(32) # WAS 22
     await multitask(robot.Right_attach.run_angle(500,-480), wait(1000), race=True)
-    await robot.Drive.straight(180)
+    await robot.Drive.straight(155)
 
     #lifts up mission 13t
     await multitask(robot.Right_attach.run_angle(500,450), wait(1000), race=True)
@@ -43,6 +43,6 @@ async def run_3(robot):
 
     
     #drives back home
-    await robot.Drive.straight(-250)
+    await robot.Drive.straight(-260)
     await robot.Drive.turn(79.9)
     await robot.Drive.straight(680)
