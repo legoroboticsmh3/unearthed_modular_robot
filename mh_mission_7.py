@@ -13,7 +13,7 @@ async def run_5(robot):
     await robot.Drive.straight(15)
     await robot.Drive.turn(-11) #turn to avoid hitting silo
     await robot.Drive.straight(740)  #reach Heavy Lifting
-    await robot.Drive.turn(51) #face heavy lifting
+    await robot.Drive.turn(54) #face heavy lifting was 51
     #await robot.Drive.straight(-40)  
     await robot.Drive.straight(60)    #reach heavy lifting
     await robot.Right_attach.run_angle(150,-180) #placing attachment down to pick up the heavy lifting
