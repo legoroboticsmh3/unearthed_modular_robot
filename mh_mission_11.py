@@ -1,5 +1,5 @@
 from utils.mh_dump_all import dump_all
-from pybricks.tools import wait
+from pybricks.tools import wait, multitask
 
 
 async def run_4(robot):  
