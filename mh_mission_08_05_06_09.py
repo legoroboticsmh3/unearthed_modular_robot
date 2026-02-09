@@ -27,8 +27,6 @@ async def run_6(robot):
 
   await robot.Right_attach.run_angle(500,-130) #hammer down
   await robot.Right_attach.run_angle(500,155) #hammer up
-  #await robot.Right_attach.run_angle(500,-100) #hammer down 4th time
-  #await robot.Right_attach.run_angle(500,85) #hammer up
   robot.Drive.settings(straight_speed=300)
 
 
@@ -39,7 +37,6 @@ async def run_6(robot):
   await robot.Drive.straight(200) #reach the Boulder station
   await robot.Right_attach.run_angle(500,-150) #hammer down
   await robot.Drive.turn(30)#turming to complete the forge
-  #await multitask(robot.Drive.turn(-65), wait(750), race=True)#turning to complete who lived here)
   await robot.Drive.turn(-50)# completing who lived heere    
 
   #Raising Market Wares:
@@ -66,26 +63,18 @@ async def run_6(robot):
   await robot.Drive.straight(50)
   await robot.Left_attach.run_angle(500,150) #Releasing ceiling
 
-  # await robot.Drive.straight(40)
-  # await robot.Left_attach.run_angle(150,75) #Releasing ceiling
-  # await robot.Drive.straight(40)
-  # await robot.Left_attach.run_angle(150,75) #Releasing ceiling 
-
   await robot.Drive.straight(-20) #Backing up after raising ceiling
   await robot.Drive.turn(-45) # Turning towards Scale Pan
   await robot.Drive.straight(110) #Driving to Scale Pan
   await robot.Drive.turn(23)#Turning toward scale pan
   await robot.Drive.straight(-21)
-  #await robot.Left_attach.run_angle(250,-180) #Grabbing Scale Pan
+
   await wait(300)
   robot.Left_attach.dc(-70)
   await wait(200)
   robot.Left_attach.dc(-30)
   await wait(1000)
-  #await wait(300)
   await robot.Drive.turn(-15)
   await robot.Drive.straight(-400) #Bringing Scale Pan home
   await robot.Drive.turn(-80)#going to home area
-  # await multitask(robot.Left_attach.run_angle(600,250), wait(1500), race=True) #Releasing Scale Pan
-  # await robot.Drive.straight(200)
   robot.Drive.settings(straight_speed=250, turn_rate=160) # Reset the straight_speed back.
