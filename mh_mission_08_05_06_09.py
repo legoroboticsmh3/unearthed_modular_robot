@@ -45,7 +45,7 @@ async def run_6(robot):
   await robot.Drive.straight(-15)#backing up to have space for turning
   await robot.Drive.turn(-110)#turning to face the market wares
   await robot.Drive.straight(43)#going to the market wares
-  await robot.Right_attach.run_angle(250,-180) #place hammer into market waresssss
+  await robot.Right_attach.run_angle(250,-200) #place hammer into market waresssss
   await wait(300)
   await robot.Drive.straight(40) #Moving forward to raise market wares
 

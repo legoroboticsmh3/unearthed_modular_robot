@@ -18,11 +18,18 @@ async def run_4(robot):
     await robot.Drive.turn(90)
 
     await robot.Drive.straight((65+robot_correction_magic_number)) # Go towards mission 11
-    await robot.Drive.turn(-10) # turn to lock gears with mission
+    await robot.Drive.turn(-11) # turn to lock gears with mission
     await robot.Left_attach.run_angle(700, 1600) # Turn the gear to pick up artifct
 
-    await robot.Drive.turn(25) #  turn to unlock the gears 
-    robot.Drive.settings(straight_speed=600)
-    await robot.Drive.straight(-200) #  driving back from mission to prepare to go back to base
-    await robot.Drive.turn(65) #alligning to red base
-    await robot.Drive.straight(950)# driving back to red base
+    await robot.Drive.turn(20) #  turn to unlock the gears 
+    await robot.Drive.straight(-180) #  driving back from mission to prepare to go to forum
+    await robot.Drive.turn(90) #alligning to forum
+    robot.Drive.settings(straight_speed=500)
+    await robot.Drive.straight(250) #moving to forum to drop off artifacts
+    await multitask(robot.Right_attach.run_angle(200, -200),wait(1000), race=True) #dropping artifacts
+
+    await robot.Drive.straight(-150) # Drive back
+    await robot.Right_attach.run_angle(600, 200) #lifting arm
+
+    await robot.Drive.turn(-30) #alignging towards base
+    await robot.Drive.straight(750)# driving back to red base

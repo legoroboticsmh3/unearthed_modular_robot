@@ -37,6 +37,5 @@ async def run_1(robot):
     #await wait(500)
 
     # drive back home
-    robot.Drive.settings(straight_speed=600)
     await robot.Drive.straight(-500)
 

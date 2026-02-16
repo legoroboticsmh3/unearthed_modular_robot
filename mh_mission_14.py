@@ -4,11 +4,9 @@ from urandom import randint
 from umath import pi, sqrt
 
 
-async def run_9(robot):
+async def run_7(robot):
     print("Starting Run: " + __name__)
     robot.Drive.settings(straight_speed=600)
 
-    await robot.Drive.straight(300)
-    await robot.Drive.turn(50)
-    await robot.Drive.straight(220)
-    await robot.Drive.straight(-450)
+    await robot.Drive.straight(-400-100)
+    await robot.Drive.straight(500)

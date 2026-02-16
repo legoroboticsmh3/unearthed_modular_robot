@@ -5,7 +5,6 @@ from pybricks.tools import wait, multitask
 async def run_4(robot):  
     await multitask(robot.Right_attach.run_angle(100,90), wait(500), race=True)
 
-    robot_correction_magic_number = -2
     # dump_all(robot) + __name__)
     robot.Drive.settings(turn_rate=120)
     robot.Drive.settings(straight_speed=600)
@@ -14,15 +13,15 @@ async def run_4(robot):
         
     await robot.Drive.turn(90) # Turn
     print("Starting Run: n and go to mission 11")
-    await robot.Drive.straight((-690+robot_correction_magic_number))
+    await robot.Drive.straight((-692))
     await robot.Drive.turn(90)
 
-    await robot.Drive.straight((65+robot_correction_magic_number)) # Go towards mission 11
+    await robot.Drive.straight((63)) # Go towards mission 11
     await robot.Drive.turn(-10) # turn to lock gears with mission
     await robot.Left_attach.run_angle(700, 1600) # Turn the gear to pick up artifct
 
     await robot.Drive.turn(25) #  turn to unlock the gears 
-    robot.Drive.settings(straight_speed=600)
     await robot.Drive.straight(-200) #  driving back from mission to prepare to go back to base
     await robot.Drive.turn(65) #alligning to red base
-    await robot.Drive.straight(950)# driving back to red base
+    robot.Drive.settings(straight_speed=500)
+    await robot.Drive.straight(900)# driving back to red base
