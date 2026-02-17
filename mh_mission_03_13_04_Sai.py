@@ -15,9 +15,9 @@ async def run_3(robot):
     robot.Left_attach.stop()
     
     #Drives to mission 03a
-    await robot.Drive.straight(-1050) #orignally was 680
+    await robot.Drive.straight(-950) #orignally was 680
     await robot.Drive.turn(-90)
-    await robot.Drive.straight(-110) # Going back to allow the angle adjustment.
+    await robot.Drive.straight(-95) # Going back to allow the angle adjustment.
     await wait(200)
     await robot.Drive.turn(-2) #turn to align orginal -2
 
@@ -27,33 +27,33 @@ async def run_3(robot):
 
     # Slow move into.
     robot.Drive.settings(straight_speed=100)
-    await robot.Drive.straight(125)
-    await multitask(robot.Left_attach.run_angle(300,-2),wait(100), race=True)
-    await wait(500) 
-    await robot.Drive.straight(50)  #feb 16 orig value 96 distance that it goes inside the frames
-    await wait(100)
-    await robot.Left_attach.run_angle(100,60) #lift angle after it grabs the artifact inside the frames roignally it was 300,50
+    await robot.Drive.straight(105) #Moves into the artifact area to grab artifact
+    await multitask(robot.Left_attach.run_angle(300,-2),wait(100), race=True) #Lowering arm to align perfectly to artifact
+    #await wait(500) 
+    await robot.Drive.straight(75)  #feb 16 orig value 96 distance that it goes inside the frames
+    #await wait(100)
+    await robot.Left_attach.run_angle(100,60) #lift arm after it grabs the artifact inside the frames roignally it was 300,50
     await wait(100)
 
     # With prints, it is working. So dont remove the print.
     print("V 1",robot.Right_attach.settings())
     print("left attach done")
-    robot.Right_attach.run(720)
+    robot.Right_attach.run(720) #Sending minecart to to other side
     print("V2 ",robot.Right_attach.settings())
     await wait(1000)
     robot.Right_attach.stop()
 
-    await robot.Drive.straight(-145)
-    await robot.Left_attach.run_angle(300,75)
-    await wait(100)
+    await robot.Drive.straight(-145) #backing out of artifact area
+    await robot.Left_attach.run_angle(300,75) #comes outside and lifts artifact higher to secure it
+    #await wait(100)
 
 
     #Drives to mission 13t
-    robot.Drive.settings(straight_speed=400)
-    await robot.Drive.turn(39)#original value was 37
-    await multitask(robot.Right_attach.run_angle(400,-380),wait(1000), race=True)
-    await robot.Drive.straight(380)
-    await multitask(robot.Right_attach.run_angle(600,380),wait(1000), race=True)
+    robot.Drive.settings(straight_speed=600) #was 400
+    await robot.Drive.turn(37.8)#turns toward dinosaur
+    await multitask(robot.Right_attach.run_angle(400,-380),wait(1000), race=True) #lowering to prepare for lifting the dinosaur
+    await robot.Drive.straight(380) #going toward dinosaur and putting arm under the artifact to lift it up
+    await multitask(robot.Right_attach.run_angle(600,380),wait(1000), race=True) #lifting the dinosaur up
     '''
     #this is to deliver the artifact
     await robot.Drive.straight(-100)

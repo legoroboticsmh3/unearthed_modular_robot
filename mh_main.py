@@ -30,6 +30,8 @@ from mh_mission_11 import run_4
 from mh_mission_04 import run_8
 from mh_mission_14 import run_7
 from mh_mission_03_13_axle import run_11
+from mh_mission_reset_03_04_13 import run_12
+
 
 #Gamma Runs (Uncomment if using sigma robot)
 # from gamma_robot_runs.mh_mission_12_gamma import run_1  # Mission Model Mission 12
@@ -42,6 +44,6 @@ from mh_mission_03_13_axle import run_11
 async def main():
     #full run loader
 
-    await multitask(loader(robot,[run_6, run_5, run_4, run_3, run_2,run_1 , run_7 ,run_8, run_11]))     
+    await multitask(loader(robot,[run_6, run_5, run_4,run_12, run_3, run_2,run_1 , run_7 ,run_8, run_11]))     
 
 run_task(main())
