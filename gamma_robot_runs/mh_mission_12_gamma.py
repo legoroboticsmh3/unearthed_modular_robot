@@ -24,17 +24,11 @@ async def run_1(robot):
     robot.Right_attach.stop()
     await robot.Drive.straight(-70)
     await robot.Right_attach.run_angle(200, 130)
-    await robot.Drive.straight(190)
+    await robot.Drive.straight(210) #ram into big ship to lift it uppie
     robot.Left_attach.dc(-80)
     await wait(300)
     robot.Left_attach.dc(80)
     await wait(300)
-
-    #Bring right attachment up
-   # await robot.Drive.straight(20)
-    #await wait(500)
-    #await robot.Left_attach.run_angle(200, 130)
-    #await wait(500)
 
     # drive back home
     await robot.Drive.straight(-500)

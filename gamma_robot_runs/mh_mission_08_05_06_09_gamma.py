@@ -51,15 +51,15 @@ async def run_6(robot):
 
   #Tip the Scales and Rasing Ceiling:
   await robot.Right_attach.run_angle(500,180) #lifting up hammmer from market wares 
-  await robot.Drive.straight(-70) #backing up from market wares
+  await robot.Drive.straight(-75) #backing up from market wares
   await robot.Drive.turn(-25) #setting up for ceiling and scale
   await robot.Drive.straight(160) #moving towards scale and ceiling area
   await robot.Drive.turn(110)#Facing the scale and ceiling
   await robot.Drive.straight(45) #going to scale and ceiling
-  await robot.Left_attach.run_angle(500,-215) #Slamming Tipping the Scale and grabbing ceiling
+  await robot.Left_attach.run_angle(500,-210) #Slamming Tipping the Scale and grabbing ceiling
   await wait(300)
-  await robot.Drive.straight(-160) #Bringing ceiling up was -180
-  await robot.Right_attach.run_angle(500,25)
+  await robot.Drive.straight(-155) #Bringing ceiling up was -180
+  await robot.Right_attach.run_angle(500,20)
   await robot.Drive.straight(50)
   await robot.Left_attach.run_angle(500,150) #Releasing ceiling
 

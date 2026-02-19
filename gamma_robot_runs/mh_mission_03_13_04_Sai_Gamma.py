@@ -5,7 +5,7 @@ from pybricks.tools import wait, multitask
 async def run_3(robot):
     print("Starting Run: " + __name__)
     #robot.Drive.use_gyro(True)
-    robot.Drive.settings(straight_speed=600)
+    robot.Drive.settings(straight_speed=500)
     robot.Drive.settings(turn_rate=100)
 
     robot.Right_attach.dc(120)
@@ -17,12 +17,12 @@ async def run_3(robot):
     #Drives to mission 03a
     await robot.Drive.straight(-950) #orignally was 680
     await robot.Drive.turn(-90)
-    await robot.Drive.straight(-90) # Going back to allow the angle adjustment. Sigma value was -90 
+    await robot.Drive.straight(-95) # Going back to allow the angle adjustment.
     await wait(200)
     await robot.Drive.turn(-2) #turn to align orginal -2
 
 
-    await robot.Left_attach.run_angle(300,-250) # this is for careful recovery (Sigma was -250)
+    await robot.Left_attach.run_angle(300,-250) # this is for careful recovery
     await robot.Right_attach.run_angle(300,-290) # this is for the mine cart
 
     # Slow move into.
@@ -32,7 +32,7 @@ async def run_3(robot):
     #await wait(500) 
     await robot.Drive.straight(75)  #feb 16 orig value 96 distance that it goes inside the frames
     #await wait(100)
-    await robot.Left_attach.run_angle(100,60) #lift arm after it grabs the artifact inside the frames Sigma value is (100,60)
+    await robot.Left_attach.run_angle(100,60) #lift arm after it grabs the artifact inside the frames roignally it was 300,50
     await wait(100)
 
     # With prints, it is working. So dont remove the print.
