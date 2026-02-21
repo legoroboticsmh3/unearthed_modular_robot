@@ -34,6 +34,16 @@ class Robot:
         # Assign Movement Motors
         self.L_Motor = Motor(self.config['drive']['left'][0],positive_direction=self.config['drive']['left'][1],gears=self.config['drive']['left'][2])
         self.R_Motor = Motor(self.config['drive']['right'][0],positive_direction=self.config['drive']['right'][1],gears=self.config['drive']['right'][2])
+
+        print(self.L_Motor.control.limits())
+        print(self.R_Motor.control.limits())
+
+        self.L_Motor.control.limits(1200, 2000)
+        self.R_Motor.control.limits(1200, 2000)
+
+        print(self.L_Motor.control.limits())
+        print(self.R_Motor.control.limits())
+
         self.Drive= DriveBase(self.L_Motor,self.R_Motor,self.config['drive']['diameter'],self.config['drive']['width'])
         self.Drive.distance_control.pid(kp=15491)#new setting was kp=8491
         #print(self.Drive.distance_control.pid())  # spike prime default(5491, 0, 1372, 2, 5)

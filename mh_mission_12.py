@@ -3,6 +3,7 @@ from pybricks.tools import wait, multitask
 
 #going to the mission model mission 3
 async def run_1(robot):
+    
     #robot.Drive.settings(straight_speed=400)
     robot.Drive.settings(turn_rate=160)
     robot.Right_attach.dc(55)
@@ -10,7 +11,7 @@ async def run_1(robot):
     await wait(600)
     await robot.Right_attach.run_angle(200, -120)
     #move from wall
-    await robot.Drive.straight(50)
+    await robot.Drive.straight(75)
     #turn towards mission
     await robot.Drive.turn(90)
     #drive to mission
@@ -21,11 +22,12 @@ async def run_1(robot):
     await wait(250)
 
     # drive back and lift right arm up
-    robot.Right_attach.stop()
     await robot.Drive.straight(-70)
     await robot.Right_attach.run_angle(200, 130)
+    robot.Right_attach.stop()
     await robot.Drive.straight(190)
-    robot.Left_attach.dc(-80)
+    await robot.Drive.turn(2)
+    robot.Left_attach.dc(-50)
     await wait(300)
     robot.Left_attach.dc(80)
     await wait(300)

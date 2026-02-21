@@ -26,7 +26,8 @@ async def run_3(robot):
     await robot.Right_attach.run_angle(300,-290) # this is for the mine cart
 
     # Slow move into.
-    robot.Drive.settings(straight_speed=100)
+    robot.Drive.settings(straight_speed=50)
+    await wait(200)
     await robot.Drive.straight(105) #Moves into the artifact area to grab artifact
     await multitask(robot.Left_attach.run_angle(300,-2),wait(100), race=True) #Lowering arm to align perfectly to artifact
     #await wait(500) 
@@ -38,9 +39,9 @@ async def run_3(robot):
     # With prints, it is working. So dont remove the print.
     print("V 1",robot.Right_attach.settings())
     print("left attach done")
-    robot.Right_attach.run(720) #Sending minecart to to other side
+    robot.Right_attach.run(300) #Sending minecart to to other side : was(720)
     print("V2 ",robot.Right_attach.settings())
-    await wait(1000)
+    await wait(2000)
     robot.Right_attach.stop()
 
     await robot.Drive.straight(-145) #backing out of artifact area
@@ -50,7 +51,7 @@ async def run_3(robot):
 
     #Drives to mission 13t
     robot.Drive.settings(straight_speed=600) #was 400
-    await robot.Drive.turn(37.8)#turns toward dinosaur
+    await robot.Drive.turn(39.7)#turns toward dinosaur
     await multitask(robot.Right_attach.run_angle(400,-380),wait(1000), race=True) #lowering to prepare for lifting the dinosaur
     await robot.Drive.straight(380) #going toward dinosaur and putting arm under the artifact to lift it up
     await multitask(robot.Right_attach.run_angle(600,380),wait(1000), race=True) #lifting the dinosaur up

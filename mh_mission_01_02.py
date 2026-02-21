@@ -14,31 +14,31 @@ async def run_2(robot):
 
 
     await robot.Drive.straight(705) #drving straight to mission 2 #was 700
-    await robot.Drive.turn(-45) #turning to line up with misssion 2 
+    await robot.Drive.turn(-47.5) #turning to line up with misssion 2 
 
 
     await robot.Right_attach.run_angle(500,-180) 
     await wait(200) #waiting for the attachment to move
 
     
-    robot.Drive.settings(straight_speed=200) #setting the speed of driving straight 
+    robot.Drive.settings(straight_speed=100) #setting the speed of driving straight 
     await robot.Drive.straight(150) #driving into topsoil
     await wait(200)
 
-    robot.Right_attach.dc(-40) #right arm lowers down to grab topsoil and push the topsoil
+    robot.Right_attach.dc(-50) #right arm lowers down to grab topsoil and push the topsoil
     await wait(451) 
     
-    await multitask(robot.Drive.straight(140),wait(700), race=True) #driving forward while pushing topsoil
+    await multitask(robot.Drive.straight(200),wait(1000),race=True) #driving forward while pushing topsoil
     robot.Drive.stop()
 
 
     #Picks up topsoil
     #await robot.Drive.turn(-7)# turning to not get stuck on surface brushing while backing up
     await robot.Right_attach.run_angle(100,50)
-    await robot.Drive.straight(-60) #driving backwards to get to surface brushing
+    await robot.Drive.straight(-60) 
     await robot.Right_attach.run_angle(100,200) #picking up topsoil
     #await robot.Drive.turn(7)
-    
+    robot.Drive.settings(straight_speed=600)
     await robot.Drive.turn(-12) 
     await robot.Drive.straight(-200) 
     await robot.Drive.turn(-46)
@@ -68,4 +68,4 @@ async def run_2(robot):
     await robot.Drive.straight(-80)
     await robot.Drive.turn(-70)
     robot.Drive.settings(straight_speed=600)
-    await robot.Drive.straight(450)    
+    await robot.Drive.straight(450)
